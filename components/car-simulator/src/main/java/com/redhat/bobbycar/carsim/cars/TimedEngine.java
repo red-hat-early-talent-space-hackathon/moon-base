@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars;
+package com.redhat.rover.carsim.cars;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -15,11 +15,11 @@ import javax.annotation.Generated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.cars.events.EngineMetricsEvent;
-import com.redhat.bobbycar.carsim.cars.events.EngineMetricsEventListener;
-import com.redhat.bobbycar.carsim.drivers.RouteNotSupportedException;
-import com.redhat.bobbycar.carsim.routes.Route;
-import com.redhat.bobbycar.carsim.routes.RoutePoint;
+import com.redhat.rover.carsim.cars.events.EngineMetricsEvent;
+import com.redhat.rover.carsim.cars.events.EngineMetricsEventListener;
+import com.redhat.rover.carsim.drivers.RouteNotSupportedException;
+import com.redhat.rover.carsim.routes.Route;
+import com.redhat.rover.carsim.routes.RoutePoint;
 
 public class TimedEngine implements Engine{
 	private static final Logger LOGGER = LoggerFactory.getLogger(TimedEngine.class);
@@ -101,7 +101,7 @@ public class TimedEngine implements Engine{
 	public EngineData currentData() {
 		Optional<Double> currentSpeedInKmH = currentSpeedInKmH();
 		LOGGER.debug("Current speed {}", currentSpeedInKmH);
-		com.redhat.bobbycar.carsim.cars.EngineData.Builder builder = EngineData.builder();
+		com.redhat.rover.carsim.cars.EngineData.Builder builder = EngineData.builder();
 		currentSpeedInKmH.ifPresent(speed -> {
 			config.co2FromSpeed(speed).ifPresent(builder::withCo2Emission);
 			config.fuelConsumptionPer100KmFromSpeed(speed).ifPresent(builder::withFuelConsumptionPer100km);

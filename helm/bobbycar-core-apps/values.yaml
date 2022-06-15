@@ -1,20 +1,20 @@
 namespace:
-appName: Bobbycar
+appName: Rover
 ocpDomain:
 ocpApi:
 
 mqtt:
   topic:
-    mqttZoneChangeTopic: bobbycar/zonechange
-    mqttMetricsTopic: bobbycar/enginemetrics
+    mqttZoneChangeTopic: rover/zonechange
+    mqttMetricsTopic: rover/enginemetrics
 
 kafka:
   topic:
-    gps: bobbycar-gps
-    metrics: bobbycar-metrics
-    zonechange: bobbycar-zonechange
+    gps: rover-gps
+    metrics: rover-metrics
+    zonechange: rover-zonechange
   bootstrap:
-    servers: bobbycar-cluster-kafka-bootstrap:9092
+    servers: rover-cluster-kafka-bootstrap:9092
 
 datagrid:
   cache:

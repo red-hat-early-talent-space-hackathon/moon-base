@@ -16,7 +16,7 @@ spec:
   source:
     git:
       ref: master
-      uri: https://github.com/sa-mw-dach/bobbycar.git
+      uri: https://github.com/Red-Hat-Space-Association/moon-base.git
     type: Git
     contextDir: "components/car-simulator"
   strategy:

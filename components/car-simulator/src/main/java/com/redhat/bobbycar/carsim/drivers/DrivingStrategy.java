@@ -1,11 +1,11 @@
-package com.redhat.bobbycar.carsim.drivers;
+package com.redhat.rover.carsim.drivers;
 
 import java.util.Optional;
 import java.util.function.Consumer;
 
-import com.redhat.bobbycar.carsim.CarEvent;
-import com.redhat.bobbycar.carsim.routes.Route;
-import com.redhat.bobbycar.carsim.routes.RoutePoint;
+import com.redhat.rover.carsim.CarEvent;
+import com.redhat.rover.carsim.routes.Route;
+import com.redhat.rover.carsim.routes.RoutePoint;
 
 public interface DrivingStrategy {
 	

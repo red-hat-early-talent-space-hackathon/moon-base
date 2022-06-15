@@ -1,5 +1,5 @@
-Bobbycar Tekton Components:
+Rover Tekton Components:
 
-  - Bobbycar (car-simulator) Tekton pipeline
+  - Rover (car-simulator) Tekton pipeline
   - Buildah Task
   - Tekton Trigger

@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.routes;
+package com.redhat.rover.carsim.routes;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
@@ -16,12 +16,12 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.clients.OsmRoutesService;
-import com.redhat.bobbycar.carsim.clients.model.Channel;
-import com.redhat.bobbycar.carsim.clients.model.Item;
-import com.redhat.bobbycar.carsim.gpx.GpxReader;
-import com.redhat.bobbycar.carsim.gpx.GpxType;
-import com.redhat.bobbycar.carsim.gpx10.Gpx;
+import com.redhat.rover.carsim.clients.OsmRoutesService;
+import com.redhat.rover.carsim.clients.model.Channel;
+import com.redhat.rover.carsim.clients.model.Item;
+import com.redhat.rover.carsim.gpx.GpxReader;
+import com.redhat.rover.carsim.gpx.GpxType;
+import com.redhat.rover.carsim.gpx10.Gpx;
 
 @ApplicationScoped
 public class OsmRouteSelector implements RouteSelectionStrategy{

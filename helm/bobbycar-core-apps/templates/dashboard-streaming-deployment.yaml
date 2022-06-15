@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: dashboard-streaming
-          image: quay.io/bobbycar/dashboard-streaming:native-1.0
+          image: quay.io/rover/dashboard-streaming:native-1.0
           ports:
             - containerPort: 8080
               protocol: TCP

@@ -1,6 +1,6 @@
-package com.redhat.bobbycar.carsim.consumer;
+package com.redhat.rover.carsim.consumer;
 
-import com.redhat.bobbycar.carsim.consumer.model.ZoneChangeEvent;
+import com.redhat.rover.carsim.consumer.model.ZoneChangeEvent;
 
 public interface ZoneChangeListener {
 	

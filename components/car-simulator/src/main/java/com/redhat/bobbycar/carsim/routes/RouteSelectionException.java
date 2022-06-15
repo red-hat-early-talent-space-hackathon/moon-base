@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.routes;
+package com.redhat.rover.carsim.routes;
 
 public class RouteSelectionException extends RuntimeException {
 

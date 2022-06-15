@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars.model;
+package com.redhat.rover.carsim.cars.model;
 
 import java.util.ArrayList;
 import java.util.List;

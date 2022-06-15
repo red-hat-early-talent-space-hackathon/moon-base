@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.clients.model;
+package com.redhat.rover.carsim.clients.model;
 
 import javax.xml.bind.annotation.XmlElement;
 

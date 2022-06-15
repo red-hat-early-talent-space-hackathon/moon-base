@@ -1,4 +1,4 @@
-package com.redhat.bobbycar;
+package com.redhat.rover;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.jboss.logging.Logger;
@@ -19,19 +19,19 @@ public class KafkaConsumer {
 
     private static final Logger LOGGER = Logger.getLogger(KafkaConsumer.class.getName());
 
-    @Incoming("bobbycar-gps")
+    @Incoming("rover-gps")
     public void consumeGps(String carEvent) {
         LOGGER.info("Received Kafka gps data:" + carEvent);
         carEventSocket.broadcast(carEvent);
     }
 
-    @Incoming("bobbycar-metrics")
+    @Incoming("rover-metrics")
     public void consumeMetrics(String metrics) {
         LOGGER.info("Received Kafka engine data:" + metrics);
         carMetricsSocket.broadcast(metrics);
     }
 
-    @Incoming("bobbycar-zonechange")
+    @Incoming("rover-zonechange")
     public void consumeZoneChange(String zoneChangeEvent) {
         LOGGER.info("Received Kafka zone change event:" + zoneChangeEvent);
         zoneChangeSocket.broadcast(zoneChangeEvent);

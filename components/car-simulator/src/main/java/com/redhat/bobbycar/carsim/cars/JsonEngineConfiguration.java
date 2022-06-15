@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars;
+package com.redhat.rover.carsim.cars;
 
 import java.io.FileNotFoundException;
 import java.util.Comparator;
@@ -13,9 +13,9 @@ import javax.json.bind.JsonbException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.cars.model.EngineBehavior;
-import com.redhat.bobbycar.carsim.cars.model.GearBehavior;
-import com.redhat.bobbycar.carsim.cars.model.SpeedPerRpm;
+import com.redhat.rover.carsim.cars.model.EngineBehavior;
+import com.redhat.rover.carsim.cars.model.GearBehavior;
+import com.redhat.rover.carsim.cars.model.SpeedPerRpm;
 
 
 public class JsonEngineConfiguration implements EngineConfiguration {

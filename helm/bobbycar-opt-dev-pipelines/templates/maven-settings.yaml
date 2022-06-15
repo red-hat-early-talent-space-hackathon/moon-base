@@ -13,19 +13,19 @@ data:
       <servers>
         <server>
           <id>repo-release</id>
-          <username>{{ .Values.pipeline.bobbycar.maven.repoRelease.user }}</username>
-          <password>{{ .Values.pipeline.bobbycar.maven.repoRelease.password }}</password>
+          <username>{{ .Values.pipeline.rover.maven.repoRelease.user }}</username>
+          <password>{{ .Values.pipeline.rover.maven.repoRelease.password }}</password>
         </server>
         <server>
           <id>repo-snapshot</id>
-          <username>{{ .Values.pipeline.bobbycar.maven.repoSnapshot.user }}</username>
-          <password>{{ .Values.pipeline.bobbycar.maven.repoSnapshot.password }}</password>
+          <username>{{ .Values.pipeline.rover.maven.repoSnapshot.user }}</username>
+          <password>{{ .Values.pipeline.rover.maven.repoSnapshot.password }}</password>
         </server>
       </servers>
       <mirrors>
         <mirror>
           <id>mirror.default</id>
-          <url>{{ .Values.pipeline.bobbycar.maven.mirror }}</url>
+          <url>{{ .Values.pipeline.rover.maven.mirror }}</url>
           <mirrorOf>central</mirrorOf>
         </mirror>
       </mirrors>

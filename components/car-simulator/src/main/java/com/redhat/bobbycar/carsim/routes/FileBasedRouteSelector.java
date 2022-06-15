@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.routes;
+package com.redhat.rover.carsim.routes;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.gpx.GpxReader;
+import com.redhat.rover.carsim.gpx.GpxReader;
 
 public class FileBasedRouteSelector implements RouteSelectionStrategy{
 	

@@ -12,7 +12,7 @@ spec:
       scheme: http
   namespaceSelector:
     matchNames:
-      - bobbycar
+      - rover
   selector:
     matchLabels:
       app: car-simulator

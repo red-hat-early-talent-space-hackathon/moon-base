@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim;
+package com.redhat.rover.carsim;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -19,15 +19,15 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.cars.Car;
-import com.redhat.bobbycar.carsim.cars.JsonEngineConfiguration;
-import com.redhat.bobbycar.carsim.cars.TimedEngine;
-import com.redhat.bobbycar.carsim.drivers.Driver;
-import com.redhat.bobbycar.carsim.drivers.DrivingStrategy;
-import com.redhat.bobbycar.carsim.drivers.TimedDrivingStrategy;
-import com.redhat.bobbycar.carsim.gpx.GpxReader;
-import com.redhat.bobbycar.carsim.routes.Route;
-import com.redhat.bobbycar.carsim.routes.RoutePoint;
+import com.redhat.rover.carsim.cars.Car;
+import com.redhat.rover.carsim.cars.JsonEngineConfiguration;
+import com.redhat.rover.carsim.cars.TimedEngine;
+import com.redhat.rover.carsim.drivers.Driver;
+import com.redhat.rover.carsim.drivers.DrivingStrategy;
+import com.redhat.rover.carsim.drivers.TimedDrivingStrategy;
+import com.redhat.rover.carsim.gpx.GpxReader;
+import com.redhat.rover.carsim.routes.Route;
+import com.redhat.rover.carsim.routes.RoutePoint;
 
 class DriverTest {
 	private static final Logger LOGGER = LoggerFactory.getLogger(DriverTest.class);

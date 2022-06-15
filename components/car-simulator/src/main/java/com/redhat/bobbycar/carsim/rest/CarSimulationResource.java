@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.rest;
+package com.redhat.rover.carsim.rest;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,11 +13,11 @@ import javax.ws.rs.core.MediaType;
 
 import org.jboss.resteasy.annotations.SseElementType;
 
-import com.redhat.bobbycar.carsim.data.DriverDao;
-import com.redhat.bobbycar.carsim.rest.model.CarDto;
-import com.redhat.bobbycar.carsim.rest.model.CarEventDto;
-import com.redhat.bobbycar.carsim.rest.model.CarSimulationDto;
-import com.redhat.bobbycar.carsim.rest.model.RouteDto;
+import com.redhat.rover.carsim.data.DriverDao;
+import com.redhat.rover.carsim.rest.model.CarDto;
+import com.redhat.rover.carsim.rest.model.CarEventDto;
+import com.redhat.rover.carsim.rest.model.CarSimulationDto;
+import com.redhat.rover.carsim.rest.model.RouteDto;
 
 import io.smallrye.mutiny.Multi;
 

@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars;
+package com.redhat.rover.carsim.cars;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -18,11 +18,11 @@ public class EngineMetrics {
 	private static final String METRIC_KM_UNIT = "kmh";
 	private static final String TAG_ROUTE = "route";
 	private static final String TAG_DRIVER = "driver";
-	private static final String METRIC_GEAR = "com.redhat.bobbycar.carsim.car.gear";
-	private static final String METRIC_FUEL = "com.redhat.bobbycar.carsim.car.fuel";
-	private static final String METRIC_CO2 = "com.redhat.bobbycar.carsim.car.co2";
-	private static final String METRIC_RPM = "com.redhat.bobbycar.carsim.car.rpm";
-	private static final String METRIC_CAR_SPEED = "com.redhat.bobbycar.carsim.car.speed";
+	private static final String METRIC_GEAR = "com.redhat.rover.carsim.car.gear";
+	private static final String METRIC_FUEL = "com.redhat.rover.carsim.car.fuel";
+	private static final String METRIC_CO2 = "com.redhat.rover.carsim.car.co2";
+	private static final String METRIC_RPM = "com.redhat.rover.carsim.car.rpm";
+	private static final String METRIC_CAR_SPEED = "com.redhat.rover.carsim.car.speed";
 	private static final Logger LOGGER = LoggerFactory.getLogger(EngineMetrics.class);
 	private Optional<EngineData> engineData;
 

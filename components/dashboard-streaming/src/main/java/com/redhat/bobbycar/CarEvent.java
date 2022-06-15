@@ -1,4 +1,4 @@
-package com.redhat.bobbycar;
+package com.redhat.rover;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

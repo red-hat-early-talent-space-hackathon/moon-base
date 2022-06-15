@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.routes;
+package com.redhat.rover.routes;
 import java.nio.charset.Charset;
 import java.util.stream.Collectors;
 
@@ -15,11 +15,11 @@ import org.infinispan.commons.marshall.StringMarshaller;
 
 public class DatagridToRestRoute extends RouteBuilder {
 	// private static final String PATH_TO_SERVICE_CA = "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt";
-	@PropertyInject("com.redhat.bobbycar.camelk.dg.host")
+	@PropertyInject("com.redhat.rover.camelk.dg.host")
     private String datagridHost;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.user", defaultValue = "developer")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.user", defaultValue = "developer")
     private String datagridUsername;
-	@PropertyInject("com.redhat.bobbycar.camelk.dg.password")
+	@PropertyInject("com.redhat.rover.camelk.dg.password")
     private String datagridPassword;
 	private RemoteCacheManager cacheManager;
 	private RemoteCache<String, String> zonesCache;
@@ -53,7 +53,7 @@ public class DatagridToRestRoute extends RouteBuilder {
 		from("rest:get:cars/{carid}")
 			 .setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.GET)
 			 .setHeader(InfinispanConstants.KEY).expression(simple("${headers[carid]}"))
-			.to("infinispan://{{com.redhat.bobbycar.camelk.dg.car.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration&hosts=bobbycar-dg");
+			.to("infinispan://{{com.redhat.rover.camelk.dg.car.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration&hosts=rover-dg");
 		from("rest:get:zones")
 			.setHeader("Access-Control-Allow-Origin",constant("*"))
 			.process(ex -> {
@@ -62,7 +62,7 @@ public class DatagridToRestRoute extends RouteBuilder {
 		from("rest:get:zones/{zoneid}")	
 		 	.setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.GET)
 		 	.setHeader(InfinispanConstants.KEY).expression(simple("${headers[zoneid]}"))
-		 	.to("infinispan://{{com.redhat.bobbycar.camelk.dg.zone.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration");
+		 	.to("infinispan://{{com.redhat.rover.camelk.dg.zone.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration");
 	}
 
 	private void initRemoteCache(Configuration cacheConfig) {

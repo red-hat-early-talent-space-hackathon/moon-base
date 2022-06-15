@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.routes;
+package com.redhat.rover.carsim.routes;
 
 import java.io.Serializable;
 import java.util.ArrayList;

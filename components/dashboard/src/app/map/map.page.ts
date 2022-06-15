@@ -17,7 +17,7 @@ export class MapPage implements OnInit {
     marker: google.maps.Marker;
     infowindow: google.maps.InfoWindow;
     initialPosition = { lat: 50.1146997, lng: 8.6185411 };
-    bobbycars = new Map();
+    rovers = new Map();
     zones = [];
     searchArea: google.maps.Circle;
     isQuery = false;
@@ -70,8 +70,8 @@ export class MapPage implements OnInit {
 
     createOrUpdateMarker(data){
 
-        if(this.bobbycars.has(data.carid)){
-            this.bobbycars.get(data.carid).setPosition(new google.maps.LatLng({ lat: data.lat, lng: data.long }));
+        if(this.rovers.has(data.carid)){
+            this.rovers.get(data.carid).setPosition(new google.maps.LatLng({ lat: data.lat, lng: data.long }));
         } else {
             console.debug('create marker for carid: ' + data.carid);
             const marker = new google.maps.Marker({
@@ -88,7 +88,7 @@ export class MapPage implements OnInit {
                 return function() {
                     infowindow.setContent(
                         `<span style="color: #000000;">
-                            <h4>Bobbycar Id:</h4>
+                            <h4>Rover Id:</h4>
                             <p>`+content.carid+`<br/>
                             <h4>Zone:</h4>`+content?.zone?.spec.name+`</p><br/>
                             <ion-button href="/car-detail/`+content.carid+`">Car Detail</ion-button>
@@ -97,7 +97,7 @@ export class MapPage implements OnInit {
                 }
             })(marker, data, this.infowindow));
 
-            this.bobbycars.set(data.carid, marker);
+            this.rovers.set(data.carid, marker);
         }
     }
 
@@ -158,10 +158,10 @@ export class MapPage implements OnInit {
     }
 
     resetMap() {
-        this.bobbycars.forEach(el => {
+        this.rovers.forEach(el => {
             el.setMap(null);
         });
-        this.bobbycars.clear();
+        this.rovers.clear();
 
         this.zones.forEach(element => {
             element.setMap(null);

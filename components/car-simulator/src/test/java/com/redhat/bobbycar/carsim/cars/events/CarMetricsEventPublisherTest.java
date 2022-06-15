@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars.events;
+package com.redhat.rover.carsim.cars.events;
 
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.mock;
@@ -11,10 +11,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import com.redhat.bobbycar.carsim.DatagridTestResource;
-import com.redhat.bobbycar.carsim.DefaultTestProfile;
-import com.redhat.bobbycar.carsim.KafkaTestResource;
-import com.redhat.bobbycar.carsim.cars.EngineData;
+import com.redhat.rover.carsim.DatagridTestResource;
+import com.redhat.rover.carsim.DefaultTestProfile;
+import com.redhat.rover.carsim.KafkaTestResource;
+import com.redhat.rover.carsim.cars.EngineData;
 
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;

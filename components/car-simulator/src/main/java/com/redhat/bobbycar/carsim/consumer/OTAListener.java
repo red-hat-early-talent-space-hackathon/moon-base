@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.consumer;
+package com.redhat.rover.carsim.consumer;
 
 public interface OTAListener {
     public void onUpdate(String event);

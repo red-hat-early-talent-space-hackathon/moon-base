@@ -1,6 +1,6 @@
-package com.redhat.bobbycar.carsim.drivers;
+package com.redhat.rover.carsim.drivers;
 
-import com.redhat.bobbycar.carsim.routes.Route;
+import com.redhat.rover.carsim.routes.Route;
 
 public class RouteNotSupportedException extends RuntimeException {
 

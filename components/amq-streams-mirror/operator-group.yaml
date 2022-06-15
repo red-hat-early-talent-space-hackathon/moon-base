@@ -3,9 +3,9 @@ kind: OperatorGroup
 metadata:
   annotations:
     olm.providedAPIs: ""
-  generateName: bobbycar-og-
-  name: bobbycar-og
-  namespace: $(NS_BOBBYCAR_ML)
+  generateName: rover-og-
+  name: rover-og
+  namespace: $(NS_ROVER_ML)
 spec:
   targetNamespaces:
-  - $(NS_BOBBYCAR_ML)
+  - $(NS_ROVER_ML)

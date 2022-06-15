@@ -8,9 +8,9 @@ spec:
     - name: git-clone
       params:
         - name: url
-          value: {{ .Values.pipeline.bobbycar.gitCloneUrl }}
+          value: {{ .Values.pipeline.rover.gitCloneUrl }}
         - name: revision
-          value: {{ .Values.pipeline.bobbycar.gitRevision }}
+          value: {{ .Values.pipeline.rover.gitRevision }}
         - name: submodules
           value: "true"
         - name: depth
@@ -35,7 +35,7 @@ spec:
             - test
             - org.jacoco:jacoco-maven-plugin:0.8.6:report
         - name: MAVEN_MIRROR_URL
-          value: {{ .Values.pipeline.bobbycar.maven.mirror }}
+          value: {{ .Values.pipeline.rover.maven.mirror }}
         - name: PROXY_PROTOCOL
           value: http
       runAfter:
@@ -55,11 +55,11 @@ spec:
             - org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar
             - -f
             - components/car-simulator/pom.xml
-            - -Dsonar.host.url={{ .Values.pipeline.bobbycar.sonar.host }}
-            - -Dsonar.projectKey={{ .Values.pipeline.bobbycar.sonar.projectKey }}
-            - -Dsonar.login={{ .Values.pipeline.bobbycar.sonar.loginToken }}
+            - -Dsonar.host.url={{ .Values.pipeline.rover.sonar.host }}
+            - -Dsonar.projectKey={{ .Values.pipeline.rover.sonar.projectKey }}
+            - -Dsonar.login={{ .Values.pipeline.rover.sonar.loginToken }}
         - name: MAVEN_MIRROR_URL
-          value: {{ .Values.pipeline.bobbycar.maven.mirror }}
+          value: {{ .Values.pipeline.rover.maven.mirror }}
         - name: PROXY_PROTOCOL
           value: http
       runAfter:
@@ -80,10 +80,10 @@ spec:
             - -f
             - components/car-simulator/pom.xml
             - -Dmaven.test.skip=true
-            - -Drepos.snapshot.url={{ .Values.pipeline.bobbycar.nexus.snapshotRepoUrl }}
-            - -Drepos.release.url={{ .Values.pipeline.bobbycar.nexus.releaseRepoUrl }}
+            - -Drepos.snapshot.url={{ .Values.pipeline.rover.nexus.snapshotRepoUrl }}
+            - -Drepos.release.url={{ .Values.pipeline.rover.nexus.releaseRepoUrl }}
         - name: MAVEN_MIRROR_URL
-          value: {{ .Values.pipeline.bobbycar.maven.mirror }}
+          value: {{ .Values.pipeline.rover.maven.mirror }}
         - name: PROXY_PROTOCOL
           value: http
       runAfter:
@@ -99,7 +99,7 @@ spec:
     - name: build-image
       params:
         - name: IMAGE
-          value: {{ .Values.pipeline.bobbycar.containerImage }}
+          value: {{ .Values.pipeline.rover.containerImage }}
         - name: BUILDER_IMAGE
           value: quay.io/buildah/stable:v1.14.8
         - name: STORAGE_DRIVER

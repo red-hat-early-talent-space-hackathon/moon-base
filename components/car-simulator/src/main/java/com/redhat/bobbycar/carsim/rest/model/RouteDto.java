@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.rest.model;
+package com.redhat.rover.carsim.rest.model;
 
 public class RouteDto {
 	private String name;

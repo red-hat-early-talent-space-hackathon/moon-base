@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.drivers;
+package com.redhat.rover.carsim.drivers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -13,7 +13,7 @@ public class DriverMetrics {
 	private AtomicLong pointsVisited = new AtomicLong(0);
 	private AtomicLong carsDriving = new AtomicLong(0);
 
-	@Gauge(absolute = true, name = "com.redhat.bobbycar.carsim.pointsvisited", unit = MetricUnits.NONE, description = "How many route points have been visited")
+	@Gauge(absolute = true, name = "com.redhat.rover.carsim.pointsvisited", unit = MetricUnits.NONE, description = "How many route points have been visited")
 	public long getPointsVisited() {
 		return pointsVisited.get();
 	}
@@ -22,7 +22,7 @@ public class DriverMetrics {
 		this.pointsVisited.incrementAndGet();
 	}
 	
-	@Gauge(absolute = true, name = "com.redhat.bobbycar.carsim.carsdriving", unit = MetricUnits.NONE, description = "How many cars are currently driving")
+	@Gauge(absolute = true, name = "com.redhat.rover.carsim.carsdriving", unit = MetricUnits.NONE, description = "How many cars are currently driving")
 	public long getCarsDriving() {
 		return carsDriving.get();
 	}

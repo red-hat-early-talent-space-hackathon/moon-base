@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.routes;
+package com.redhat.rover.routes;
 
 import java.io.ByteArrayInputStream;
 import java.util.Iterator;
@@ -103,7 +103,7 @@ public class Kafka2S3Route extends RouteBuilder {
 					exchange.getIn().setBody(new ByteArrayInputStream(sb.toString().getBytes()));
 				}
 			})
-		  .setHeader(S3Constants.KEY, simple("bobbycar-gps-${date:now}.txt"))
+		  .setHeader(S3Constants.KEY, simple("rover-gps-${date:now}.txt"))
 		  .to("aws-s3://{{s3.bucket.name}}?amazonS3Client=#client")
 		  .log("Uploaded Vibration dataset to S3");
 			 

@@ -1,13 +1,13 @@
-package com.redhat.bobbycar.carsim.rest;
+package com.redhat.rover.carsim.rest;
 
-import com.redhat.bobbycar.carsim.cars.Car;
-import com.redhat.bobbycar.carsim.cars.EngineConfiguration;
-import com.redhat.bobbycar.carsim.cars.model.EngineBehavior;
-import com.redhat.bobbycar.carsim.data.CarDao;
-import com.redhat.bobbycar.carsim.data.DriverDao;
-import com.redhat.bobbycar.carsim.rest.model.CarDto;
-import com.redhat.bobbycar.carsim.rest.model.CarSimulationDto;
-import com.redhat.bobbycar.carsim.rest.model.RouteDto;
+import com.redhat.rover.carsim.cars.Car;
+import com.redhat.rover.carsim.cars.EngineConfiguration;
+import com.redhat.rover.carsim.cars.model.EngineBehavior;
+import com.redhat.rover.carsim.data.CarDao;
+import com.redhat.rover.carsim.data.DriverDao;
+import com.redhat.rover.carsim.rest.model.CarDto;
+import com.redhat.rover.carsim.rest.model.CarSimulationDto;
+import com.redhat.rover.carsim.rest.model.RouteDto;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;

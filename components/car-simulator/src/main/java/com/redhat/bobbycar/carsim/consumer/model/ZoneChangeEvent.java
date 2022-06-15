@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.consumer.model;
+package com.redhat.rover.carsim.consumer.model;
 
 import java.io.Serializable;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package com.redhat.bobbycar;
+package com.redhat.rover;
 
 import org.jboss.logging.Logger;
 

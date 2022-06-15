@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.funqy.cloudevent;
+package com.redhat.rover.funqy.cloudevent;
 
 import io.quarkus.funqy.Context;
 import io.quarkus.funqy.Funq;

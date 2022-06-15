@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars;
+package com.redhat.rover.carsim.cars;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -10,8 +10,8 @@ import java.time.ZonedDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.redhat.bobbycar.carsim.drivers.RouteNotSupportedException;
-import com.redhat.bobbycar.carsim.routes.RoutePoint;
+import com.redhat.rover.carsim.drivers.RouteNotSupportedException;
+import com.redhat.rover.carsim.routes.RoutePoint;
 
 class TimedEngineTest {
 	

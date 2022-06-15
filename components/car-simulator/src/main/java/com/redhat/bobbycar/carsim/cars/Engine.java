@@ -1,6 +1,6 @@
-package com.redhat.bobbycar.carsim.cars;
+package com.redhat.rover.carsim.cars;
 
-import com.redhat.bobbycar.carsim.routes.RoutePoint;
+import com.redhat.rover.carsim.routes.RoutePoint;
 
 public interface Engine extends Runnable{
 

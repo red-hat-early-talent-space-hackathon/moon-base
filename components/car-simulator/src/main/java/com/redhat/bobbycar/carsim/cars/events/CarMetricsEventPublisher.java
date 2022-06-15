@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.cars.events;
+package com.redhat.rover.carsim.cars.events;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

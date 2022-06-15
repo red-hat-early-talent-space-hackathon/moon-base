@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim;
+package com.redhat.rover.carsim;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.post;
@@ -26,9 +26,9 @@ import javax.net.ssl.SSLException;
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBException;
 
-import com.redhat.bobbycar.carsim.consumer.OTAConsumer;
-import com.redhat.bobbycar.carsim.consumer.OTAListener;
-import com.redhat.bobbycar.carsim.data.CarDao;
+import com.redhat.rover.carsim.consumer.OTAConsumer;
+import com.redhat.rover.carsim.consumer.OTAListener;
+import com.redhat.rover.carsim.data.CarDao;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.metrics.MetricRegistry;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -36,31 +36,31 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.redhat.bobbycar.carsim.cars.Car;
-import com.redhat.bobbycar.carsim.cars.EngineException;
-import com.redhat.bobbycar.carsim.cars.EngineMetrics;
-import com.redhat.bobbycar.carsim.cars.JsonEngineConfiguration;
-import com.redhat.bobbycar.carsim.cars.TimedEngine;
-import com.redhat.bobbycar.carsim.cars.events.CarMetricsEvent;
-import com.redhat.bobbycar.carsim.cars.events.CarMetricsEventPublisher;
-import com.redhat.bobbycar.carsim.clients.DataGridService;
-import com.redhat.bobbycar.carsim.clients.KafkaService;
-import com.redhat.bobbycar.carsim.clients.model.KafkaCarEvent;
-import com.redhat.bobbycar.carsim.clients.model.KafkaCarPosition;
-import com.redhat.bobbycar.carsim.clients.model.KafkaCarRecord;
-import com.redhat.bobbycar.carsim.consumer.ZoneChangeConsumer;
-import com.redhat.bobbycar.carsim.consumer.ZoneChangeListener;
-import com.redhat.bobbycar.carsim.data.DriverDao;
-import com.redhat.bobbycar.carsim.drivers.Driver;
-import com.redhat.bobbycar.carsim.drivers.DriverMetrics;
-import com.redhat.bobbycar.carsim.drivers.TimedDrivingStrategy;
-import com.redhat.bobbycar.carsim.drivers.TimedDrivingStrategyMetrics;
-import com.redhat.bobbycar.carsim.gpx.GpxReader;
-import com.redhat.bobbycar.carsim.routes.CompositeRouteSelector;
-import com.redhat.bobbycar.carsim.routes.FileBasedRouteSelector;
-import com.redhat.bobbycar.carsim.routes.OsmRouteSelector;
-import com.redhat.bobbycar.carsim.routes.Route;
-import com.redhat.bobbycar.carsim.routes.RouteSelectionStrategy;
+import com.redhat.rover.carsim.cars.Car;
+import com.redhat.rover.carsim.cars.EngineException;
+import com.redhat.rover.carsim.cars.EngineMetrics;
+import com.redhat.rover.carsim.cars.JsonEngineConfiguration;
+import com.redhat.rover.carsim.cars.TimedEngine;
+import com.redhat.rover.carsim.cars.events.CarMetricsEvent;
+import com.redhat.rover.carsim.cars.events.CarMetricsEventPublisher;
+import com.redhat.rover.carsim.clients.DataGridService;
+import com.redhat.rover.carsim.clients.KafkaService;
+import com.redhat.rover.carsim.clients.model.KafkaCarEvent;
+import com.redhat.rover.carsim.clients.model.KafkaCarPosition;
+import com.redhat.rover.carsim.clients.model.KafkaCarRecord;
+import com.redhat.rover.carsim.consumer.ZoneChangeConsumer;
+import com.redhat.rover.carsim.consumer.ZoneChangeListener;
+import com.redhat.rover.carsim.data.DriverDao;
+import com.redhat.rover.carsim.drivers.Driver;
+import com.redhat.rover.carsim.drivers.DriverMetrics;
+import com.redhat.rover.carsim.drivers.TimedDrivingStrategy;
+import com.redhat.rover.carsim.drivers.TimedDrivingStrategyMetrics;
+import com.redhat.rover.carsim.gpx.GpxReader;
+import com.redhat.rover.carsim.routes.CompositeRouteSelector;
+import com.redhat.rover.carsim.routes.FileBasedRouteSelector;
+import com.redhat.rover.carsim.routes.OsmRouteSelector;
+import com.redhat.rover.carsim.routes.Route;
+import com.redhat.rover.carsim.routes.RouteSelectionStrategy;
 
 import io.quarkus.runtime.ShutdownEvent;
 import io.quarkus.runtime.StartupEvent;
@@ -70,21 +70,21 @@ public class CarSimulatorApp {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CarSimulatorApp.class);
 	// Config Properties
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.cars", defaultValue = "10")
+	@ConfigProperty(name = "com.redhat.rover.carsim.cars", defaultValue = "10")
 	int cars;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.route")
+	@ConfigProperty(name = "com.redhat.rover.carsim.route")
 	String pathToRoutes;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.route.remote", defaultValue = "")
+	@ConfigProperty(name = "com.redhat.rover.carsim.route.remote", defaultValue = "")
 	Optional<String[]> remoteRoutes;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.delay", defaultValue = "0")
+	@ConfigProperty(name = "com.redhat.rover.carsim.delay", defaultValue = "0")
 	int delay;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.factor", defaultValue = "1.0")
+	@ConfigProperty(name = "com.redhat.rover.carsim.factor", defaultValue = "1.0")
 	double factor;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.repeat", defaultValue = "false")
+	@ConfigProperty(name = "com.redhat.rover.carsim.repeat", defaultValue = "false")
 	boolean repeat;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.kafka.apiKey")
+	@ConfigProperty(name = "com.redhat.rover.carsim.kafka.apiKey")
 	Optional<String> apiKey;
-	@ConfigProperty(name = "com.redhat.bobbycar.carsim.mockHttp", defaultValue = "false")
+	@ConfigProperty(name = "com.redhat.rover.carsim.mockHttp", defaultValue = "false")
 	boolean mockHttp;
 	
 	// CDI Beans
@@ -178,7 +178,7 @@ public class CarSimulatorApp {
 		if (mockHttp) {
 			wireMockServer = new WireMockServer(8081);
 			wireMockServer.start(); 
-			wireMockServer.stubFor(post(urlMatching("/topics/bobbycar-gps")).willReturn(
+			wireMockServer.stubFor(post(urlMatching("/topics/rover-gps")).willReturn(
 					aResponse().withHeader("Content-Type", "application/json").withBody("")));
 			
 		}

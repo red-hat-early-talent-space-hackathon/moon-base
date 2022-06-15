@@ -4,7 +4,7 @@ fullnameOverride: ""
 pipeline:
   serviceAccountName: "tekton-triggers-sa"
   deployTektonTriggerClusterRole: true
-  bobbycar:
+  rover:
     storage: "1Gi"
     maven:
       mirror: "http://nexus3-domain/repository/maven-public/"
@@ -14,7 +14,7 @@ pipeline:
       repoSnapshot:
         user: "admin"
         password: ""
-    gitCloneUrl: "http://domain/repo/bobbycar.git"
+    gitCloneUrl: "http://domain/repo/rover.git"
     gitRevision: "master"
     sonar:
       host: "http://sonarqube-domain/"

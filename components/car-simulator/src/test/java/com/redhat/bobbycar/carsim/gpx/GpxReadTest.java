@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.gpx;
+package com.redhat.rover.carsim.gpx;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -11,8 +11,8 @@ import javax.xml.bind.JAXBException;
 
 import org.junit.jupiter.api.Test;
 
-import com.redhat.bobbycar.carsim.gpx.GpxReader.GpxVersion;
-import com.redhat.bobbycar.carsim.routes.Route;
+import com.redhat.rover.carsim.gpx.GpxReader.GpxVersion;
+import com.redhat.rover.carsim.routes.Route;
 
 class GpxReadTest {
 

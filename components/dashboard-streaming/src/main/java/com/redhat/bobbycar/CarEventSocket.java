@@ -1,4 +1,4 @@
-package com.redhat.bobbycar;
+package com.redhat.rover;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.*;

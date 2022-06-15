@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.consumer;
+package com.redhat.rover.carsim.consumer;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.consumer.model.ZoneChangeEvent;
+import com.redhat.rover.carsim.consumer.model.ZoneChangeEvent;
 
 @ApplicationScoped
 public class ZoneChangeConsumer {

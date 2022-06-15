@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim;
+package com.redhat.rover.carsim;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
@@ -13,8 +13,8 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.redhat.bobbycar.carsim.clients.model.Zone;
-import com.redhat.bobbycar.carsim.clients.model.ZoneSpec;
+import com.redhat.rover.carsim.clients.model.Zone;
+import com.redhat.rover.carsim.clients.model.ZoneSpec;
 
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 
@@ -31,7 +31,7 @@ public class DatagridTestResource implements QuarkusTestResourceLifecycleManager
 		wireMockServer.stubFor(get(urlMatching("/zones/.*")).willReturn(
 				aResponse().withHeader("Content-Type", "application/json").withBody(jsonb.toJson(dummyZone()))));
 
-		return Collections.singletonMap("com.redhat.bobbycar.carsim.datagrid.url", wireMockServer.baseUrl());
+		return Collections.singletonMap("com.redhat.rover.carsim.datagrid.url", wireMockServer.baseUrl());
 	}
 
 	private static Zone dummyZone() {

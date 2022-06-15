@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.clients;
+package com.redhat.rover.carsim.clients;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -8,9 +8,9 @@ import javax.ws.rs.QueryParam;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import com.redhat.bobbycar.carsim.clients.model.KafkaCarEvent;
+import com.redhat.rover.carsim.clients.model.KafkaCarEvent;
 
-@Path("/topics/bobbycar-gps")
+@Path("/topics/rover-gps")
 @RegisterRestClient(configKey = "kafka")
 public interface KafkaService {
 

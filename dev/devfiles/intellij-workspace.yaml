@@ -4,7 +4,7 @@ metadata:
 projects:
   - name: bobbycar
     source:
-      location: 'https://github.com/sa-mw-dach/bobbycar'
+      location: 'https://github.com/Red-Hat-Space-Association/moon-base'
       type: git
 components:
   - type: cheEditor

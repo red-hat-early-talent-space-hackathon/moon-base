@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.routes;
+package com.redhat.rover.routes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -58,25 +58,25 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 	private static final String CACHE_TEMPLATE = "org.infinispan.DIST_ASYNC";
 	private static final String PATH_TO_SERVICE_CA = "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt";
 	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaToDatagridRoute.class);
-	@PropertyInject("com.redhat.bobbycar.camelk.dg.host")
+	@PropertyInject("com.redhat.rover.camelk.dg.host")
     private String datagridHost;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.user", defaultValue = "developer")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.user", defaultValue = "developer")
     private String datagridUsername;
-	@PropertyInject("com.redhat.bobbycar.camelk.dg.password")
+	@PropertyInject("com.redhat.rover.camelk.dg.password")
     private String datagridPassword;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.aggregationInterval", defaultValue = "60000")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.aggregationInterval", defaultValue = "60000")
 	private long aggregationInterval;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.aggregationDistinct", defaultValue = "true")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.aggregationDistinct", defaultValue = "true")
     private boolean aggregationDistinct;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.car.cacheName")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.car.cacheName")
 	private String carsCacheName;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.car.snapshot.cacheName")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.car.snapshot.cacheName")
 	private String carsnapshotCacheName;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.zone.cacheName")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.zone.cacheName")
 	private String zonesCacheName;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.ocp.api")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.ocp.api")
 	private String ocpAPIHost;
-	@PropertyInject(value = "com.redhat.bobbycar.camelk.dg.namespace")
+	@PropertyInject(value = "com.redhat.rover.camelk.dg.namespace")
 	private String namespace;
 
 	private RemoteCacheManager cacheManager;
@@ -413,7 +413,7 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 	}
 
 	private void storeAggregatedSnaphotOfCarEventsInCacheRouteJson() {
-		from("kafka:{{com.redhat.bobbycar.camelk.kafka.topic}}?clientId=kafkaToDatagridAggregatorCamelClient&brokers={{com.redhat.bobbycar.camelk.kafka.brokers}}").routeId("storeAggregatedSnaphotOfCarEventsInCacheRouteJson")
+		from("kafka:{{com.redhat.rover.camelk.kafka.topic}}?clientId=kafkaToDatagridAggregatorCamelClient&brokers={{com.redhat.rover.camelk.kafka.brokers}}").routeId("storeAggregatedSnaphotOfCarEventsInCacheRouteJson")
 			//.unmarshal().json(JsonLibrary.Jackson, CarEvent.class)
 			.process(ex -> 
 				ex.getIn().setBody(mapper.readValue(ex.getIn().getBody(String.class), CarEvent.class))
@@ -442,14 +442,14 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 			.setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.PUT)
 			.setHeader(InfinispanConstants.KEY).expression(simple("aggregated"))
 		    .setHeader(InfinispanConstants.VALUE).expression(simple("${body}"))
-			.to("infinispan://{{com.redhat.bobbycar.camelk.dg.car.snapshot.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration");
+			.to("infinispan://{{com.redhat.rover.camelk.dg.car.snapshot.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration");
 	}
 	
 	private void storeZonesInCacheRoute() throws IOException {
 		// restConfiguration().component("netty-http").host("https://"+ocpAPIHost).port(6443).bindingMode(RestBindingMode.json);
 		bindToRegistry("sslConfiguration", configureSslForApiAccess());
 		String token = retrieveServiceAccountToken();
-		from("scheduler://foo?delay={{com.redhat.bobbycar.camelk.dg.refresh.interval}}").routeId("storeZonesInCache")
+		from("scheduler://foo?delay={{com.redhat.rover.camelk.dg.refresh.interval}}").routeId("storeZonesInCache")
 			.process(ex -> {
 				zonesCache.clear();
 			})
@@ -457,12 +457,12 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 			.setHeader(Exchange.HTTP_METHOD, constant("GET"))
 			.setHeader("Connection", constant("Keep-Alive"))
 			.setHeader(Exchange.CONTENT_TYPE, constant("application/json"))
-			.to("netty-http:https://" + ocpAPIHost + ":6443/apis/bobbycar.redhat.com/v1alpha1/namespaces/" + namespace + "/bobbycarzones?sslContextParameters=#sslConfiguration&keepAlive=true")
+			.to("netty-http:https://" + ocpAPIHost + ":6443/apis/rover.redhat.com/v1alpha1/namespaces/" + namespace + "/roverzones?sslContextParameters=#sslConfiguration&keepAlive=true")
 			//.log("Response was ${body}")
 				.process(exchange -> {
 					NettyHttpMessage msg = exchange.getIn(NettyHttpMessage.class);
 					String payload = msg.getBody(String.class);
-					String zonesData = payload.substring(payload.indexOf("\"items\":[")+8, payload.indexOf(",\"kind\":\"BobbycarZoneList\""));
+					String zonesData = payload.substring(payload.indexOf("\"items\":[")+8, payload.indexOf(",\"kind\":\"RoverZoneList\""));
 					exchange.getIn().setBody(zonesData);
 				})
 			.split().jsonpathWriteAsString("$")
@@ -470,7 +470,7 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 			.setHeader(InfinispanConstants.KEY).expression(jsonpath("$.metadata.name", String.class))
 			.setHeader(InfinispanConstants.VALUE).expression(simple("${body}"))
 			.log("Saving data to cache with value: ${headers[CamelInfinispanValue]}")
-			.to("infinispan://{{com.redhat.bobbycar.camelk.dg.zone.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration");
+			.to("infinispan://{{com.redhat.rover.camelk.dg.zone.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration");
 	}
 
 	private String retrieveServiceAccountToken() throws IOException {
@@ -482,7 +482,7 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 		// clear the cars cache before starting the route
 		carsCache.clear();
 
-		from("kafka:{{com.redhat.bobbycar.camelk.kafka.topic}}?clientId=kafkaToDatagridCamelClient&brokers={{com.redhat.bobbycar.camelk.kafka.brokers}}").routeId("storeCarEventsInCache")
+		from("kafka:{{com.redhat.rover.camelk.kafka.topic}}?clientId=kafkaToDatagridCamelClient&brokers={{com.redhat.rover.camelk.kafka.brokers}}").routeId("storeCarEventsInCache")
 			.log("Received ${body} from Kafka")
 			.setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.PUT)
 			.setHeader(InfinispanConstants.KEY).expression(jsonpath("$.carid"))
@@ -499,7 +499,7 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 		    .setHeader(InfinispanConstants.VALUE).expression(simple("${body}"))
 		    .setHeader(InfinispanConstants.RESULT_HEADER).expression(simple("dummyAvoidOverwritingBody"))
 		    .log("Saving data to cache with key: ${headers[CamelInfinispanKey]} and value: ${body} of type  ${body.class}")
-			.to("infinispan://{{com.redhat.bobbycar.camelk.dg.car.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration")
+			.to("infinispan://{{com.redhat.rover.camelk.dg.car.cacheName}}?cacheContainerConfiguration=#cacheContainerConfiguration")
 			.choice()
 				.when(header(ZONE_CHANGE_HEADER).isEqualTo(true))
 				.process(this::transformToZoneChangeEvent)
@@ -508,7 +508,7 @@ public class KafkaToDatagridRoute extends RouteBuilder {
 					ex.getIn().setBody(mapper.writeValueAsString(ex.getIn().getBody(ZoneChangeEvent.class)))
 				)
 				.log("Publishing ${body} to mqtt")
-				.to("paho:{{com.redhat.bobbycar.camelk.mqtt.topic}}?brokerUrl={{com.redhat.bobbycar.camelk.mqtt.brokerUrl}}")
+				.to("paho:{{com.redhat.rover.camelk.mqtt.topic}}?brokerUrl={{com.redhat.rover.camelk.mqtt.brokerUrl}}")
 			;
 	}
 	

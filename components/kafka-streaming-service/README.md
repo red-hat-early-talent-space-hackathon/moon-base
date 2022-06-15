@@ -3,5 +3,5 @@
 ## Dev mode
 
 ````shell
-kamel run src/main/java/com/redhat/bobbycar/routes/KafkaSseRoute.java --dev --name kafkaStreamingDev --secret=kafka-streaming --profile=openshift --trait service.enabled=false
+kamel run src/main/java/com/redhat/rover/routes/KafkaSseRoute.java --dev --name kafkaStreamingDev --secret=kafka-streaming --profile=openshift --trait service.enabled=false
 ````

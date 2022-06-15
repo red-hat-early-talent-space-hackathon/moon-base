@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.consumer;
+package com.redhat.rover.carsim.consumer;
 
 import org.junit.jupiter.api.Disabled;
 

@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.consumer;
+package com.redhat.rover.carsim.consumer;
 
 import io.smallrye.reactive.messaging.mqtt.MqttMessage;
 import org.eclipse.microprofile.reactive.messaging.Incoming;

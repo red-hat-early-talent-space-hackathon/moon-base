@@ -1,14 +1,14 @@
-package com.redhat.bobbycar.carsim.cars;
+package com.redhat.rover.carsim.cars;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-import com.redhat.bobbycar.carsim.consumer.OTAListener;
+import com.redhat.rover.carsim.consumer.OTAListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.bobbycar.carsim.routes.RoutePoint;
+import com.redhat.rover.carsim.routes.RoutePoint;
 
 public class Car implements OTAListener {
 	private final String model;

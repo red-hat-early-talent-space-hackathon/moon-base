@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.drivers;
+package com.redhat.rover.carsim.drivers;
 
 import javax.enterprise.context.ApplicationScoped;
 
@@ -11,7 +11,7 @@ public class TimedDrivingStrategyMetrics {
 	private long skewMillis;
 	
 	
-	@Gauge(absolute = true, name = "com.redhat.bobbycar.carsim.skew", unit = MetricUnits.MILLISECONDS, description = "Should be negative otherwise processing power is not sufficient to simulate cars")
+	@Gauge(absolute = true, name = "com.redhat.rover.carsim.skew", unit = MetricUnits.MILLISECONDS, description = "Should be negative otherwise processing power is not sufficient to simulate cars")
 	public long getSkewMillis() {
 		return skewMillis;
 	}

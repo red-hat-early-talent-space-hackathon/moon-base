@@ -1,7 +1,7 @@
 apiVersion: eventing.knative.dev/v1
 kind: Trigger
 metadata:
-  name: bobbycar-zone-audit
+  name: rover-zone-audit
   namespace: {{ .Values.namespace }}
 spec:
   broker: {{ .Values.broker.name }}
@@ -9,12 +9,12 @@ spec:
     ref:
       apiVersion: serving.knative.dev/v1
       kind: Service
-      name: bobbycar-zone-audit
+      name: rover-zone-audit
 ---
 apiVersion: eventing.knative.dev/v1
 kind: Trigger
 metadata:
-  name: bobbycar-zone-approval
+  name: rover-zone-approval
   namespace: {{ .Values.namespace }}
 spec:
   filter:
@@ -25,4 +25,4 @@ spec:
     ref:
       apiVersion: serving.knative.dev/v1
       kind: Service
-      name: bobbycar-zone-approval
+      name: rover-zone-approval

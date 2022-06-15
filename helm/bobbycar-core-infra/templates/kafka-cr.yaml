@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
-  name: bobbycar-cluster
+  name: rover-cluster
   namespace: {{ .Values.namespace }}
 spec:
   kafka:

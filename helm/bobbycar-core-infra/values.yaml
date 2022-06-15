@@ -1,5 +1,5 @@
 namespace:
-appName: Bobbycar
+appName: Rover
 ocpDomain:
 
 datagrid:
@@ -22,17 +22,17 @@ kafka:
     port: 8080
   topic:
     gps:
-      name: bobbycar-gps
+      name: rover-gps
       partitions: 1
       replicas: 1
       retention: 60000
     metrics:
-      name: bobbycar-metrics
+      name: rover-metrics
       partitions: 1
       replicas: 1
       retention: 60000
     zonechange:
-      name: bobbycar-zonechange
+      name: rover-zonechange
       partitions: 1
       replicas: 1
       retention: 300000

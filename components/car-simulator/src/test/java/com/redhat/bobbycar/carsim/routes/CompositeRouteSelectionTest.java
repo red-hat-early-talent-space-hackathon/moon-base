@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.routes;
+package com.redhat.rover.carsim.routes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

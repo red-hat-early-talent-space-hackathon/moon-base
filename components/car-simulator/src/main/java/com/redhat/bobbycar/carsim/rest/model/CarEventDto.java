@@ -1,11 +1,11 @@
-package com.redhat.bobbycar.carsim.rest.model;
+package com.redhat.rover.carsim.rest.model;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Optional;
 
-import com.redhat.bobbycar.carsim.CarEvent;
+import com.redhat.rover.carsim.CarEvent;
 
 public class CarEventDto {
 	private BigDecimal longitude;

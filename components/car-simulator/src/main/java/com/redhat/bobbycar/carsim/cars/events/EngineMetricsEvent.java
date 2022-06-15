@@ -1,8 +1,8 @@
-package com.redhat.bobbycar.carsim.cars.events;
+package com.redhat.rover.carsim.cars.events;
 
 import java.util.Objects;
 
-import com.redhat.bobbycar.carsim.cars.EngineData;
+import com.redhat.rover.carsim.cars.EngineData;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 

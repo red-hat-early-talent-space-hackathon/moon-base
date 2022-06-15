@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.data;
+package com.redhat.rover.carsim.data;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import com.redhat.bobbycar.carsim.drivers.Driver;
+import com.redhat.rover.carsim.drivers.Driver;
 
 @ApplicationScoped
 public class DriverDao {

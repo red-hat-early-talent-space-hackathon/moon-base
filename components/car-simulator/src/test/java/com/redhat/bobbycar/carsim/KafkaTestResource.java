@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim;
+package com.redhat.rover.carsim;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.post;
@@ -23,10 +23,10 @@ public class KafkaTestResource implements QuarkusTestResourceLifecycleManager {
 
 		wireMockServer = new WireMockServer(options().dynamicPort());
 		wireMockServer.start(); 
-		wireMockServer.stubFor(post(urlMatching("/topics/bobbycar-gps")).willReturn(
+		wireMockServer.stubFor(post(urlMatching("/topics/rover-gps")).willReturn(
 				aResponse().withHeader("Content-Type", "application/json").withBody("")));
 
-		return Collections.singletonMap("com.redhat.bobbycar.carsim.kafka.url", wireMockServer.baseUrl());
+		return Collections.singletonMap("com.redhat.rover.carsim.kafka.url", wireMockServer.baseUrl());
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.consumer;
+package com.redhat.rover.carsim.consumer;
 
 import static java.time.Duration.ofSeconds;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -10,10 +10,10 @@ import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import com.redhat.bobbycar.carsim.DatagridTestResource;
-import com.redhat.bobbycar.carsim.DefaultTestProfile;
-import com.redhat.bobbycar.carsim.KafkaTestResource;
-import com.redhat.bobbycar.carsim.consumer.model.ZoneChangeEvent;
+import com.redhat.rover.carsim.DatagridTestResource;
+import com.redhat.rover.carsim.DefaultTestProfile;
+import com.redhat.rover.carsim.KafkaTestResource;
+import com.redhat.rover.carsim.consumer.model.ZoneChangeEvent;
 
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;

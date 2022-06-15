@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.funqy.cloudevent;
+package com.redhat.rover.funqy.cloudevent;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
@@ -28,7 +28,7 @@ public class FunqyTest {
         RestAssured.given().contentType("application/json")
                 .header("ce-id", UUID.randomUUID().toString())
                 .header("ce-type", "zoneChange")
-                .header("ce-source", "Kafka:Topic:bobbycar-zonechange")
+                .header("ce-source", "Kafka:Topic:rover-zonechange")
                 .body(payload)
                 .post("/")
                 .then().statusCode(204);

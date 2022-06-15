@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.clients;
+package com.redhat.rover.carsim.clients;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -8,7 +8,7 @@ import javax.ws.rs.Produces;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import com.redhat.bobbycar.carsim.clients.model.Rss;
+import com.redhat.rover.carsim.clients.model.Rss;
 
 @Path("")
 @RegisterRestClient(configKey = "osmtraces")

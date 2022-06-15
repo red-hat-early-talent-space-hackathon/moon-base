@@ -1,4 +1,4 @@
-package com.redhat.bobbycar.carsim.clients;
+package com.redhat.rover.carsim.clients;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -10,10 +10,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import com.redhat.bobbycar.carsim.CarSimulatorApp;
-import com.redhat.bobbycar.carsim.DefaultTestProfile;
-import com.redhat.bobbycar.carsim.clients.model.Zone;
-import com.redhat.bobbycar.carsim.consumer.ZoneChangeConsumer;
+import com.redhat.rover.carsim.CarSimulatorApp;
+import com.redhat.rover.carsim.DefaultTestProfile;
+import com.redhat.rover.carsim.clients.model.Zone;
+import com.redhat.rover.carsim.consumer.ZoneChangeConsumer;
 
 import io.quarkus.test.junit.QuarkusMock;
 import io.quarkus.test.junit.QuarkusTest;
