@@ -98,7 +98,7 @@ spec:
     - name: build-image
       params:
         - name: IMAGE
-          value: image-registry.openshift-image-registry.svc:5000/bobbycar-dev/car-simulator
+          value: image-registry.openshift-image-registry.svc:5000/rover-dev/car-simulator
         - name: BUILDER_IMAGE
           value: quay.io/buildah/stable:v1.14.8
         - name: STORAGE_DRIVER

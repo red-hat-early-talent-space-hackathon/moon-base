@@ -2,7 +2,7 @@ apiVersion: 1.0.0
 metadata:
   name: car-simulator-dev
 projects:
-  - name: bobbycar
+  - name: rover
     source:
       location: 'http://gogs-bobbycar-dev.apps.ocp4.rhlab.de/gogs/bobbycar.git'
       type: git
@@ -28,9 +28,9 @@ components:
     alias: amq
     image: 'registry.redhat.io/amq7/amq-broker:7.8'
     env:
-      - value: bobbycar
+      - value: rover
         name: AMQ_USER
-      - value: bobbycar
+      - value: rover
         name: AMQ_PASSWORD
   - mountSources: true
     endpoints:
@@ -90,27 +90,27 @@ commands:
             ]
           }
         type: vscode-launch
-  - name: Bobbycar - Dev mode
+  - name: Rover - Dev mode
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/bobbycar/components/car-simulator'
+      - workdir: '${CHE_PROJECTS_ROOT}/rover/components/car-simulator'
         type: exec
         command: './mvnw compile quarkus:dev'
         component: centos-quarkus-maven
-  - name: Bobbycar - Package
+  - name: Rover - Package
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/bobbycar/components/car-simulator'
+      - workdir: '${CHE_PROJECTS_ROOT}/rover/components/car-simulator'
         type: exec
         command: ./mvnw clean package -Dmaven.test.skip
         component: centos-quarkus-maven
-  - name: Bobbycar- Package Native
+  - name: Rover- Package Native
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/bobbycar/components/car-simulator'
+      - workdir: '${CHE_PROJECTS_ROOT}/rover/components/car-simulator'
         type: exec
         command: ./mvnw package -Dnative -Dmaven.test.skip -Dquarkus.native.native-image-xmx=8G
         component: centos-quarkus-maven
-  - name: Bobbycar- Run Native
+  - name: Rover- Run Native
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/bobbycar/components/car-simulator/target'
+      - workdir: '${CHE_PROJECTS_ROOT}/rover/components/car-simulator/target'
         type: exec
         command: ./car-simulator-1.0.0-SNAPSHOT-runner
         component: ubi-minimal
