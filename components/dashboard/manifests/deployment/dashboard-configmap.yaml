@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dashboard-config
-  namespace: $(NS_ROVER)
+  namespace: build-test
 data:
   config.json: |-
     {

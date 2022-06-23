@@ -1,0 +1,34 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: dashboard-streaming
+  name: dashboard-streaming
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: {}
+  output:
+    to:
+      kind: ImageStreamTag
+      name: dashboard-streaming:latest
+  postCommit: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: rzh
+      uri: https://github.com/Red-Hat-Space-Association/moon-base.git
+    type: Git
+    contextDir: "components/dashboard-streaming"
+  strategy:
+    sourceStrategy:
+      forcePull: true
+      from:
+        kind: ImageStreamTag
+        name: 'ubi-quarkus-native-s2i:20.1.0-java11'
+    type: Source     
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - type: ConfigChange
+  - type: ImageChange
+status: 
+  lastVersion: 0

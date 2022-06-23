@@ -2,9 +2,8 @@ apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
   labels:
-    app: dashboard
-  name: dashboard
-  namespace: $(NS_ROVER)
+    app: dashboard-streaming
+  name: dashboard-streaming
 spec:
   lookupPolicy:
     local: false

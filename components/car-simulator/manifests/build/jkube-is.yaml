@@ -1,0 +1,15 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: jkube-s2i
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - name: jkube
+      from:
+        kind: DockerImage
+        name: 'quay.io/jkube/jkube-java-binary-s2i:0.0.7'
+      importPolicy: {}
+      referencePolicy:
+        type: Source
