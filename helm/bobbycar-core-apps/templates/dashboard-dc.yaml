@@ -28,7 +28,7 @@ spec:
         deploymentconfig: dashboard
     spec:
       containers:
-      - image: quay.io/rover/dashboard:1.0.1
+      - image: quay.io/stbenji/dashboard-moon:latest
         imagePullPolicy: Always
         name: dashboard
         ports:
