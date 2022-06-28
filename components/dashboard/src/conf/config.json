@@ -1,5 +1,5 @@
 {
-    "GOOGLE_API_KEY": "",
+    "GOOGLE_API_KEY": "AIzaSyCQ_cAvoPDsWylK9lSLB6FWDiAKH49Tp4Y",
     "BOBBYCAR_API_KEY": "",
     "SSE_ENDPOINT": "http://localhost:8080",
     "CAR_EVENTS_ENDPOINT": "ws://dashboard-streaming-bobbycar.apps.ocp4.rhlab.de/api/carevents?sendToAll=true",

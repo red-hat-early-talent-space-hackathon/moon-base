@@ -6,6 +6,27 @@ import { CarEventsService } from '../providers/ws.service';
 import { CacheService } from '../providers/cache.service';
 import { map, tap, delay, retryWhen, delayWhen } from 'rxjs/operators';
 
+function getHorizontallyRepeatingTileUrl(coord, zoom, urlfunc) {
+    var y = coord.y;
+    var x = coord.x;
+
+    // tile range in one direction range is dependent on zoom level
+    // 0 = 1 tile, 1 = 2 tiles, 2 = 4 tiles, 3 = 8 tiles, etc
+    var tileRange = 1 << zoom;
+
+    // don't repeat across y-axis (vertically)
+    if (y < 0 || y >= tileRange) {
+      return null;
+    }
+
+    // repeat across x-axis
+    if (x < 0 || x >= tileRange) {
+      x = (x % tileRange + tileRange) % tileRange;
+    }
+
+    return urlfunc({x:x,y:y}, zoom)
+  }
+
 @Component({
     selector: 'app-map',
     templateUrl: './map.page.html',
@@ -35,7 +56,28 @@ export class MapPage implements OnInit {
                 center: this.initialPosition,
                 zoom: 11,
                 // mapTypeId: google.maps.MapTypeId.HYBRID,
+                // mapTypeId: google.maps.MapTypeId.SATELLITE,
+
+                // mapTypeId: google.maps.MapTypeId.MOON,
+                // mapTypeId: 'moon',
             });
+
+            this.map.mapTypes.set('moon', new google.maps.ImageMapType({
+                getTileUrl: function(coord, zoom) {
+                  return getHorizontallyRepeatingTileUrl(coord, zoom, function(coord, zoom) {
+                    var bound = Math.pow(2, zoom);
+                    return "http://mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw/" +
+                           + zoom + "/" + coord.x + "/" + (bound - coord.y - 1) + '.jpg';
+                  });
+                },
+                tileSize: new google.maps.Size(256, 256),
+                maxZoom: 9,
+                minZoom: 0,
+                name: 'Moon',
+              }));
+            
+            this.map.setMapTypeId('moon');
+
             this.infowindow = new google.maps.InfoWindow({
                 content: ''
             });
