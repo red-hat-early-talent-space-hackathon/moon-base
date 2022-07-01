@@ -41,3 +41,9 @@ carSimulator:
     carsimFactor: 3
     carsimRepeat: true
     carsimDelay: 1000
+imageCredentials:
+  name: priv-registry-key
+  registry: quay.io
+  username: replaceme
+  password: replaceme
+  email: replaceme
