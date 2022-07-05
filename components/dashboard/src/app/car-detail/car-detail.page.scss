@@ -5,6 +5,12 @@
     width: 100%;
   }
 
+  .image-box-rover {
+      background: url("../../assets/roverinner.jpeg") center center no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+ }
+
   .image-box-vw {
     background: url("../../assets/vw.jpg") center center no-repeat;
     background-size: cover;
@@ -102,4 +108,9 @@
   position: absolute;
   top: 48%;
   left: 73%;
+}
+.menu-rover {
+  position: absolute;
+  top: 50%;
+  left: 40%;
 }
