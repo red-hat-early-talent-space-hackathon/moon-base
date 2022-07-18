@@ -2,4 +2,4 @@
 
 ## Dev
 
-`kamel run src/main/java/com/redhat/bobbycar/routes/Kafka2S3Route.java --dev --profile=openshift --configmap=bobbycar-kafka2s3-config --name kafka2s3-dev`
+`kamel run src/main/java/com/redhat/rover/routes/Kafka2S3Route.java --dev --profile=openshift --configmap=rover-kafka2s3-config --name kafka2s3-dev`

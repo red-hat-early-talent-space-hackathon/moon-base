@@ -1,16 +1,16 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: bobbycarzones.bobbycar.redhat.com
+  name: roverzones.rover.redhat.com
 spec:
-  group: bobbycar.redhat.com
+  group: rover.redhat.com
   names:
-    kind: BobbycarZone
-    listKind: BobbycarZoneList
-    plural: bobbycarzones
+    kind: RoverZone
+    listKind: RoverZoneList
+    plural: roverzones
     shortNames:
     - bz
-    singular: bobbycarzone
+    singular: roverzone
   scope: Namespaced
   versions:
   - name: v1alpha1
@@ -33,7 +33,7 @@ spec:
             type: object
           spec:
             description: >-
-              Desired configuration of the Bobbycar Zone.
+              Desired configuration of the Rover Zone.
             properties:
               name:
                 description: >-

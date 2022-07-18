@@ -1,4 +1,4 @@
-Bobbycar core infrastructure components:
+Rover core infrastructure components:
 
 - AMQ Broker CR
 - Datagrid CR and Route

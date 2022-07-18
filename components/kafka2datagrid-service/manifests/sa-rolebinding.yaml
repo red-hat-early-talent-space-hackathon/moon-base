@@ -1,11 +1,11 @@
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: bobbycar-view-default
+  name: rover-view-default
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: bobbycar
+    namespace: rover
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role

@@ -10,7 +10,7 @@ log() {
 source install_cleanup_vars.sh
 
 if [[ "$INSTALL_OPERATORS" == true ]]; then
-log "Creating namespace $NAMESPACE for Bobbycar demo"
+log "Creating namespace $NAMESPACE for Rover demo"
 oc new-project "$NAMESPACE" || true
 log "Installing operator group"
 sed "s:{{NAMESPACE}}:$NAMESPACE:g" config/operators/operator-group.yaml | oc apply -f -
@@ -40,21 +40,21 @@ oc wait --for=condition=Ready pod/"$CAMEL_K_POD" --timeout 300s
 fi ;
 
 log "Installing the infra Helm release: $HELM_INFRA_RELEASE_NAME"
-helm install "$HELM_INFRA_RELEASE_NAME" --set-string namespace="$NAMESPACE" --set-string ocpDomain="$APP_DOMAIN" helm/bobbycar-core-infra/
+helm install "$HELM_INFRA_RELEASE_NAME" --set-string namespace="$NAMESPACE" --set-string ocpDomain="$APP_DOMAIN" helm/rover-core-infra/
 
 sleep 30s
 
 log "Waiting for AMQ Broker pod"
-oc wait --for=condition=Ready pod/bobbycar-amq-mqtt-ss-0 --timeout 300s
+oc wait --for=condition=Ready pod/rover-amq-mqtt-ss-0 --timeout 300s
 log "Waiting for Kafka Broker pod"
-oc wait --for=condition=Ready pod/bobbycar-cluster-kafka-0 --timeout 300s
+oc wait --for=condition=Ready pod/rover-cluster-kafka-0 --timeout 300s
 log "Waiting for Datagrid pod"
-oc wait --for=condition=Ready pod/bobbycar-dg-0 --timeout 300s
+oc wait --for=condition=Ready pod/rover-dg-0 --timeout 300s
 log "Waiting for Kafka Bridge pod"
-oc wait --for=condition=Available deployment/bobbycar-bridge --timeout 300s
+oc wait --for=condition=Available deployment/rover-bridge --timeout 300s
 
 log "Installing the apps Helm release: $HELM_APP_RELEASE_NAME"
-helm install "$HELM_APP_RELEASE_NAME" helm/bobbycar-core-apps \
+helm install "$HELM_APP_RELEASE_NAME" helm/rover-core-apps \
 --set-string ocpDomain="$APP_DOMAIN" \
 --set-string ocpApi="$API_DOMAIN" \
 --set-string namespace="$NAMESPACE" \
@@ -62,9 +62,9 @@ helm install "$HELM_APP_RELEASE_NAME" helm/bobbycar-core-apps \
 
 sleep 30s
 
-log "Waiting for Bobbycar pod"
+log "Waiting for Rover pod"
 oc wait --for=condition=Available dc/car-simulator --timeout 300s
-log "Waiting for Bobbycar Dashboard pod"
+log "Waiting for Rover Dashboard pod"
 oc wait --for=condition=Available dc/dashboard --timeout 300s
 log "Waiting for Dashboard Streaming service pod"
 oc wait --for=condition=Available deployment/dashboard-streaming --timeout 300s
@@ -74,5 +74,5 @@ oc wait --for=condition=Ready integration/cache-service --timeout 1800s
 oc wait --for=condition=Ready integration/kafka2datagrid --timeout 1800s
 oc wait --for=condition=Ready integration/mqtt2kafka --timeout 1800s
 
-log "Installation completed! Open the Bobbycar dashboard and get started:"
+log "Installation completed! Open the Rover dashboard and get started:"
 oc get route dashboard -o json | jq -r .spec.host

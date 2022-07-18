@@ -1,7 +1,7 @@
 apiVersion: infinispan.org/v1
 kind: Infinispan
 metadata:
-  name: bobbycar-dg
+  name: rover-dg
 spec:
   container:
     cpu: 200m

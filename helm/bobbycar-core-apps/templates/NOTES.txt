@@ -1,10 +1,10 @@
-Bobbycar core application components:
+Rover core application components:
 
-- Bobbycar vehicle simulator: Quarkus JVM app
+- Rover vehicle simulator: Quarkus JVM app
 - Dashboard: Angular/Ionic app
 - Dashboard Streaming Service: Quarkus native app
 - Cache Service: Camel-K app
 - Kafka2Datagrid Service: Camel-K app
 - MQTT2Kafka Service: Camel-K app
-- BobbycarZone CRD
-- 3 BobbycarZone CRs
+- RoverZone CRD
+- 3 RoverZone CRs

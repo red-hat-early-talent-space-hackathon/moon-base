@@ -4,10 +4,10 @@ metadata:
   name: kafka-bridge
   namespace: {{ .Values.namespace }}
 spec:
-  host: bobbycar-{{ .Values.namespace }}.{{ .Values.ocpDomain }}
+  host: rover-{{ .Values.namespace }}.{{ .Values.ocpDomain }}
   to:
     kind: Service
-    name: bobbycar-bridge-service
+    name: rover-bridge-service
     weight: 100
   port:
     targetPort: rest-api

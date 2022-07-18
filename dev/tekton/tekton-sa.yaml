@@ -57,7 +57,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: tekton-triggers-sa
-    namespace: bobbycar-dev
+    namespace: rover-dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

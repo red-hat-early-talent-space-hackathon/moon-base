@@ -2,13 +2,13 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: view-zones
-  namespace: bobbycar
+  namespace: rover
 rules:
   - verbs:
       - get
       - list
       - watch
     apiGroups:
-      - bobbycar.redhat.com
+      - rover.redhat.com
     resources:
       - '*'

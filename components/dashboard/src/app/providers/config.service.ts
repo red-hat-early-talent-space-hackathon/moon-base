@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
 
     GOOGLE_API_KEY;
-    BOBBYCAR_API_KEY;
+    ROVER_API_KEY;
     SSE_ENDPOINT;
     CAR_EVENTS_ENDPOINT;
     CAR_METRICS_ENDPOINT;
@@ -27,7 +27,7 @@ export class ConfigService {
         console.debug('App config loaded: ' + JSON.stringify(data));
 
         this.GOOGLE_API_KEY = data.GOOGLE_API_KEY;
-        this.BOBBYCAR_API_KEY = data.BOBBYCAR_API_KEY;
+        this.ROVER_API_KEY = data.ROVER_API_KEY;
         this.SSE_ENDPOINT = data.SSE_ENDPOINT;
         this.CAR_EVENTS_ENDPOINT = data.CAR_EVENTS_ENDPOINT;
         this.CAR_METRICS_ENDPOINT = data.CAR_METRICS_ENDPOINT;

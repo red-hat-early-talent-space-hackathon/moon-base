@@ -1,6 +1,6 @@
 apiVersion: v2
-name: bobbycar-opt-dev-base
-description: Bobbycar base development components
+name: rover-opt-dev-base
+description: Rover base development components
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -23,12 +23,12 @@ version: 1.0.0
 appVersion: 4.8.18
 
 sources: 
-  - https://github.com/sa-mw-dach/bobbycar
+  - https://github.com/Red-Hat-Space-Association/moon-base
 
 icon: https://iconsplace.com/wp-content/uploads/_icons/ff0000/256/png/car-2-icon-14-256.png
 
 keywords:
-  - Bobbycar
+  - Rover
   - Gogs
   - Nexus
   - SonarQube

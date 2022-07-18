@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: amq-broker
-  namespace: $(NS_BOBBYCAR)
+  namespace: $(NS_ROVER)
 spec:
   channel: current
   installPlanApproval: Automatic

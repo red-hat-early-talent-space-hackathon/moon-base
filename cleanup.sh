@@ -19,8 +19,8 @@ log "Deleting namespace $NAMESPACE"
 oc delete namespace "$NAMESPACE" --wait=true || true
 
 if [[ "$DELETE_CRD" == true ]]; then
-  log "Deleting Custom Resource Definition BobbycarZone"
-  oc delete crd bobbycarzones.bobbycar.redhat.com || true
+  log "Deleting Custom Resource Definition RoverZone"
+  oc delete crd roverzones.rover.redhat.com || true
 fi;
 
 log "Uninstallation complete!!!"

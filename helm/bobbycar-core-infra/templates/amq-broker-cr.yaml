@@ -1,7 +1,7 @@
 apiVersion: broker.amq.io/v2alpha5
 kind: ActiveMQArtemis
 metadata:
-  name: bobbycar-amq-mqtt
+  name: rover-amq-mqtt
   namespace: {{ .Values.namespace }}
 spec:
   deploymentPlan:

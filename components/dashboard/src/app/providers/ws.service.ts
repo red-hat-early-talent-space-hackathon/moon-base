@@ -24,7 +24,7 @@ export class CarEventsService {
   }
 
   private getNewWebSocket(): WebSocketSubject<any> {
-    return webSocket(this.CAR_EVENTS_ENDPOINT+'?user_key='+this.configService.BOBBYCAR_API_KEY);
+    return webSocket(this.CAR_EVENTS_ENDPOINT+'?user_key='+this.configService.ROVER_API_KEY);
   }
 
   getMessages(): Observable<any> {

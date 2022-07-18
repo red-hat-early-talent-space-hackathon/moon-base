@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: dashboard-streaming
-          image: quay.io/bobbycar/dashboard-streaming:native-1.0
+          image: quay.io/stbenji/dashboard-streaming:latest
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -35,6 +35,8 @@ spec:
           terminationMessagePolicy: File
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
+      imagePullSecrets:
+        - name: {{ .Values.imageCredentials.name }}
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}

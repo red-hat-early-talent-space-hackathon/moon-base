@@ -2,7 +2,7 @@ apiVersion: 1.0.0
 metadata:
   name: camel-k-dev
 projects:
-  - name: bobbycar
+  - name: rover
     source:
       location: 'http://gogs-bobbycar-dev.apps.ocp4.rhlab.de/gogs/bobbycar.git'
       type: git
