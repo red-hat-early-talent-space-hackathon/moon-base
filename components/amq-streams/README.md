@@ -1,5 +1,5 @@
 # Apache Kafka (AMQ Streams) as IoT Cloud Gateway
-
+The AMQ streams component provides an event streaming backbone that allows the exchange of data with high throughput and low latency.
 ## Setting up the AMQ Streams component
 
 ```sh
@@ -16,7 +16,7 @@ oc apply -k .
 
 This will setup/install the following resources in the **rover** namespace:
 
-- an AMQ Streams Operator
+- an AMQ Streams Operator ([Strimzi](https://strimzi.io/))
 - a Kafka cluster with 3 broker and 3 zookeeper instances and metrics configured
 - a Kafka Bridge cluster with 2 instances
 - a Route to access the Kafka Bridge from outside the Cluster
