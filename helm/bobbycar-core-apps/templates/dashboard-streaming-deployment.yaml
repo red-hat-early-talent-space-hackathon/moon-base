@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: dashboard-streaming
-          image: quay.io/bobbycar/dashboard-streaming:native-1.0
+          image: quay.io/repository/redhat_emp1/etsh-moon-base-roversim:latest
           ports:
             - containerPort: 8080
               protocol: TCP

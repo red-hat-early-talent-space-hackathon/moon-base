@@ -28,7 +28,7 @@ spec:
         deploymentconfig: dashboard
     spec:
       containers:
-      - image: quay.io/bobbycar/dashboard:1.0.1
+      - image: quay.io/repository/redhat_emp1/etsh-moon-base-dashboard-frontend:latest
         imagePullPolicy: Always
         name: dashboard
         ports:
