@@ -95,8 +95,6 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
-      imagePullSecrets:
-        - name: {{ .Values.imageCredentials.name }}
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}

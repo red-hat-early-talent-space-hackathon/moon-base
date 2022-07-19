@@ -35,8 +35,6 @@ spec:
           terminationMessagePolicy: File
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
-      imagePullSecrets:
-        - name: {{ .Values.imageCredentials.name }}
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}
