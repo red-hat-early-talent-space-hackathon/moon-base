@@ -9,7 +9,7 @@ log() {
 
 source install_cleanup_vars.sh
 
-log "Creating namespace $NAMESPACE for Bobbycar demo"
+log "Creating namespace $NAMESPACE for Rover demo"
 oc new-project "$NAMESPACE" || true
 log "Installing operator group"
 sed "s:{{NAMESPACE}}:$NAMESPACE:g" config/operators/operator-group.yaml | oc apply -f -

@@ -18,9 +18,9 @@ helm install "$HELM_APP_RELEASE_NAME" helm/bobbycar-core-apps \
 
 sleep 30
 
-log "Waiting for Bobbycar pod"
+log "Waiting for Rover pod"
 oc wait --for=condition=Available dc/car-simulator --timeout 300s
-log "Waiting for Bobbycar Dashboard pod"
+log "Waiting for Rover Dashboard pod"
 oc wait --for=condition=Available dc/dashboard --timeout 300s
 log "Waiting for Dashboard Streaming service pod"
 oc wait --for=condition=Available deployment/dashboard-streaming --timeout 300s
@@ -30,5 +30,5 @@ oc wait --for=condition=Ready integration/cache-service --timeout 1800s
 oc wait --for=condition=Ready integration/kafka2datagrid --timeout 1800s
 oc wait --for=condition=Ready integration/mqtt2kafka --timeout 1800s
 
-log "Installation completed! Open the Bobbycar dashboard and get started:"
+log "Installation completed! Open the Rover dashboard and get started:"
 oc get route dashboard -o json | jq -r .spec.host
