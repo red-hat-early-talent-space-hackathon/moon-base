@@ -1,9 +1,0 @@
-Rover Serverless components:
-
-- Knative Broker
-- Service Account, Cluster Role and Role Binding to access API Sources
-- Knative APIServerSource listening for RoverZone Lifecycle changes
-- Knative KafkaSource consuming Kafka messages from zone-change topic
-- 2 Mock Knative Services (audit and approval) displaying Cloud Events
-- 1 Mock Knative Function (Funq impl.) displaying zone change events
-- 3 Knative Triggers filtering Cloud Events

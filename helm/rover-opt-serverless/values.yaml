@@ -1,5 +1,0 @@
-namespace: rover
-broker:
-  name: rover
-# The Kafka zone change topic
-kafkaTopic: rover-zonechange
