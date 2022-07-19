@@ -139,7 +139,7 @@ export class MapPage implements OnInit {
                             <h4>Rover Id:</h4>
                             <p>`+content.carid+`<br/>
                             <h4>Zone:</h4>`+content?.zone?.spec.name+`</p><br/>
-                            <ion-button href="/car-detail/`+content.carid+`">Car Detail</ion-button>
+                            <ion-button href="/car-detail/`+content.carid+`">Rover Detail</ion-button>
                         </span>`);
                     infowindow.open(this.map, marker);
                 }

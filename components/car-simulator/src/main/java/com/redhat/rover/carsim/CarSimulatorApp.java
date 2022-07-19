@@ -138,7 +138,7 @@ public class CarSimulatorApp {
 		    	EngineMetrics engineMetrics = new EngineMetrics(registry, id, route.getName());
 		    	TimedEngine engine = TimedEngine.builder().withSpeedVariationInKmH(5).withStartingPoint(route.getPoints().findFirst().orElse(null))
 							.withConfig(new JsonEngineConfiguration()).withMetrics(engineMetrics).build();
-		    	Car car = Car.builder().withModel("M3 Coupe").withManufacturer("BMW")
+		    	Car car = Car.builder().withModel("Rover V1").withManufacturer("NASA")
 						.withEngine(engine)
 						.withDriverId(id)
 						.withVin(id.toString())

@@ -37,7 +37,7 @@ class DriverTest {
 	void driveRoute(Route route) throws InterruptedException, FileNotFoundException {
 		TimedEngine engine = TimedEngine.builder().withSpeedVariationInKmH(5).withStartingPoint(route.getPoints().findFirst().orElse(null))
 				.withConfig(new JsonEngineConfiguration()).build();
-		Car car = Car.builder().withModel("M3 Coupe").withManufacturer("BMW")
+		Car car = Car.builder().withModel("Rover V1").withManufacturer("NASA")
 				.withEngine(engine).withDriverId(UUID.randomUUID()).build();
 		DrivingStrategy strategy = TimedDrivingStrategy.builder().withCar(car).build();
 		Driver driver = Driver.builder().withRoute(route).withDrivingStrategy(strategy).build();

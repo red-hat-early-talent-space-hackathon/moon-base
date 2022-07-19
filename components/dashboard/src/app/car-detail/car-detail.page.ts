@@ -30,8 +30,8 @@ export class CarDetailPage implements OnInit {
   panorama: google.maps.StreetViewPanorama;
   sv = new google.maps.StreetViewService();
   streetName = '';
-  showHUD = false;
-  carBg = 'VW';
+  showHUD = true;
+  carBg = 'ROVER';
 
   constructor(
     private carEventsService: CarEventsService,
@@ -57,7 +57,7 @@ export class CarDetailPage implements OnInit {
 
         this.marker = new google.maps.Marker({
           position: new google.maps.LatLng(this.initialPosition),
-          title: 'Car Detail',
+          title: 'Rover Detail',
           map: this.map,
           draggable: false
       });

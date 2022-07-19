@@ -46,8 +46,8 @@ class CarMetricsEventPublisherTest {
 	void testPublish() {
 		CarMetricsEvent evt = new CarMetricsEvent();
 		evt.setDriverId(ID);
-		evt.setManufacturer("BMW");
-		evt.setModel("M3 Coupe");
+		evt.setManufacturer("NASA");
+		evt.setModel("Rover V1");
 		evt.setEngineData(EngineData.builder().withCo2Emission(120).withFuelConsumptionPer100km(5.8).withGear(4)
 				.withRpm(4000).withSpeedInKmh(87.8).build());
 		publisher.publish(evt);
