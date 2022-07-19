@@ -35,7 +35,7 @@ spec:
             defaultMode: 420
       containers:
       - name: {{ .Values.carSimulator.name }}
-        image: quay.io/repository/redhat_emp1/etsh-moon-base-dashboard-streaming:latest
+        image: quay.io/redhat_emp1/etsh-moon-base-roversim:v2
         imagePullPolicy: Always
         volumeMounts:
             - name: config
