@@ -2,4 +2,4 @@
 .idea/*
 *.iml
 
-/install_cleanup_vars.sh
+install_cleanup_vars.sh
