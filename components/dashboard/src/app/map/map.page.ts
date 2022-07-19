@@ -55,6 +55,12 @@ export class MapPage implements OnInit {
             this.map = new google.maps.Map(document.getElementById('map'), {
                 center: this.initialPosition,
                 zoom: 11,
+                panControl: false,
+                zoomControl: true,
+                mapTypeControl: false,
+                scaleControl: true,
+                streetViewControl: false,
+                rotateControl: false,
                 // mapTypeId: google.maps.MapTypeId.HYBRID,
                 // mapTypeId: google.maps.MapTypeId.SATELLITE,
 
