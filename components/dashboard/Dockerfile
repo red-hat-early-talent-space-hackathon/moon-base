@@ -20,7 +20,7 @@ RUN npm run build
 
 FROM registry.access.redhat.com/ubi8/nginx-118
 
-COPY --from=build /app .
+COPY --from=build /app/www .
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8080
