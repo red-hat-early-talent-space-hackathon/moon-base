@@ -28,7 +28,7 @@ spec:
         deploymentconfig: dashboard
     spec:
       containers:
-      - image: quay.io/redhat_emp1/etsh-moon-base-dashboard-frontend:v2
+      - image: quay.io/redhat_emp1/etsh-moon-base-dashboard-frontend:v4
         imagePullPolicy: Always
         name: dashboard
         ports:
@@ -42,8 +42,6 @@ spec:
               name: dashboard-cfg-vol
               subPath: config.json
       dnsPolicy: ClusterFirst
-      imagePullSecrets:
-        - name: {{ .Values.imageCredentials.name }}
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}

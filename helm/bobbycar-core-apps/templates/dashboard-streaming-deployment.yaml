@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: dashboard-streaming
-          image: quay.io/redhat_emp1/etsh-moon-base-dashboard-streaming:v2
+          image: quay.io/redhat_emp1/etsh-moon-base-dashboard-streaming:v3
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -35,8 +35,6 @@ spec:
           terminationMessagePolicy: File
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
-      imagePullSecrets:
-        - name: {{ .Values.imageCredentials.name }}
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}
