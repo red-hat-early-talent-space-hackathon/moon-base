@@ -10,7 +10,7 @@ log() {
 source install_cleanup_vars.sh
 
 log "Installing the apps Helm release: $HELM_APP_RELEASE_NAME"
-helm install "$HELM_APP_RELEASE_NAME" helm/bobbycar-core-apps \
+helm install "$HELM_APP_RELEASE_NAME" helm/rover-core-apps \
 --set-string ocpDomain="$APP_DOMAIN" \
 --set-string ocpApi="$API_DOMAIN" \
 --set-string namespace="$NAMESPACE" \

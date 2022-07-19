@@ -10,7 +10,7 @@ log() {
 source install_cleanup_vars.sh
 
 log "Installing the infra Helm release: $HELM_INFRA_RELEASE_NAME"
-helm install "$HELM_INFRA_RELEASE_NAME" --set-string namespace="$NAMESPACE" --set-string ocpDomain="$APP_DOMAIN" helm/bobbycar-core-infra/
+helm install "$HELM_INFRA_RELEASE_NAME" --set-string namespace="$NAMESPACE" --set-string ocpDomain="$APP_DOMAIN" helm/rover-core-infra/
 
 sleep 30
 
