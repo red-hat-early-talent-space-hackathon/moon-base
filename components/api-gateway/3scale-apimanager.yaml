@@ -1,8 +1,8 @@
 apiVersion: apps.3scale.net/v1alpha1
 kind: APIManager
 metadata:
-  name: bobbycar-apimanager
-  namespace: $(NS_BOBBYCAR_API)
+  name: rover-apimanager
+  namespace: $(NS_ROVER_API)
 spec:
   wildcardDomain: $(OCP_DOMAIN)
   resourceRequirementsEnabled: false

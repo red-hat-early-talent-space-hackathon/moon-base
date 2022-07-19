@@ -1,10 +1,10 @@
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaTopic
 metadata:
-  name: bobbycar-gps
-  namespace: $(NS_BOBBYCAR)
+  name: rover-gps
+  namespace: $(NS_ROVER)
   labels:
-    strimzi.io/cluster: bobbycar-cluster
+    strimzi.io/cluster: rover-cluster
 spec:
   partitions: 3
   replicas: 1

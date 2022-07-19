@@ -11,7 +11,7 @@ export class CarService {
 
     constructor(public http: HttpClient, private configService: ConfigService) {
     }
-    // example -> curl http://car-simulator-bobbycar.apps.ocp4.rhlab.de/api/cars/efcff881-ac7a-4957-b16c-a3f1b7702f06
+    // example -> curl http://car-simulator-rover.apps.ocp4.rhlab.de/api/cars/efcff881-ac7a-4957-b16c-a3f1b7702f06
     getCarById(carId) {
         return this.http.get<any[]>(this.configService.CAR_ENDPOINT+this.carsUrl+"/"+carId);
     }

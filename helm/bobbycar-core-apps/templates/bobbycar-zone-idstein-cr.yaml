@@ -1,5 +1,5 @@
-apiVersion: bobbycar.redhat.com/v1alpha1
-kind: BobbycarZone
+apiVersion: rover.redhat.com/v1alpha1
+kind: RoverZone
 metadata:
   name: de-idstein-a3
 spec:

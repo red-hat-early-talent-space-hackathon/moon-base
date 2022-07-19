@@ -12,4 +12,4 @@ spec:
         autoscaling.knative.dev/window: "10s"
     spec:
       containers:
-        - image: quay.io/bobbycar/zone-change-service
+        - image: quay.io/rover/zone-change-service

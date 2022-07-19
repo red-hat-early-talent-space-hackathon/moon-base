@@ -1,15 +1,15 @@
 kind: CustomResourceDefinition
 apiVersion: apiextensions.k8s.io/v1beta1
 metadata:
-  name: bobbycarzones.bobbycar.redhat.com
+  name: roverzones.rover.redhat.com
 spec:
   subresources:
     status: {}
   names:
-    plural: bobbycarzones
-    singular: bobbycarzone
-    kind: BobbycarZone
-    listKind: BobbycarZoneList
+    plural: roverzones
+    singular: roverzone
+    kind: RoverZone
+    listKind: RoverZoneList
     shortNames: 
     - bz
   scope: Namespaced
@@ -17,7 +17,7 @@ spec:
     strategy: None
   preserveUnknownFields: true
   version: v1alpha1
-  group: bobbycar.redhat.com
+  group: rover.redhat.com
   validation:
     openAPIV3Schema:
       type: object
@@ -40,7 +40,7 @@ spec:
           type: object
         spec:
           description: >-
-            Desired configuration of the Bobbycar Zone.
+            Desired configuration of the Rover Zone.
           type: object
           required: ["name", "type"]
           properties:

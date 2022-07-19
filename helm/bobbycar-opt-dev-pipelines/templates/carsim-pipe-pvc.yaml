@@ -8,5 +8,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.pipeline.bobbycar.storage }}
+      storage: {{ .Values.pipeline.rover.storage }}
   volumeMode: Filesystem

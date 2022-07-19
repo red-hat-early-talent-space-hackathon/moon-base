@@ -1,5 +1,5 @@
-namespace: bobbycar
+namespace: rover
 broker:
-  name: bobbycar
+  name: rover
 # The Kafka zone change topic
-kafkaTopic: bobbycar-zonechange
+kafkaTopic: rover-zonechange

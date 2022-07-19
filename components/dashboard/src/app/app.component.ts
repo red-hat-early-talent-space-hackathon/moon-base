@@ -23,11 +23,6 @@ export class AppComponent {
       title: 'Map',
       url: '/map',
       icon: 'map'
-    },
-    {
-      title: 'Emotional Recognition',
-      url: '/hddp',
-      icon: 'speedometer-outline'
     }
   ];
 

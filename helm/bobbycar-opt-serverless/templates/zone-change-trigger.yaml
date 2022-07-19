@@ -8,7 +8,7 @@ spec:
   filter:
     attributes:
       source: >-
-        /apis/v1/namespaces/bobbycar/kafkasources/zone-change-kafka-source#{{ .Values.kafkaTopic }}
+        /apis/v1/namespaces/rover/kafkasources/zone-change-kafka-source#{{ .Values.kafkaTopic }}
       type: dev.knative.kafka.event
   subscriber:
     ref:

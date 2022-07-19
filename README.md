@@ -1,11 +1,11 @@
-# Bobbycar
+# Rover
 
-Bobbycar is a distributed cloud-native application that implements **key aspects** of a modern **IoT architecture** in an exemplary manner. 
+Rover is a distributed cloud-native application that implements **key aspects** of a modern **IoT architecture** in an exemplary manner. 
 This demo is based on Red Hat's Kubernetes Distribution, **Red Hat OpenShift Container Platform**, and uses various middleware components optimized for a cloud-native usage.
 
 ## About
 
-Bobbycars are actually vehicle simulators implemented in **Quarkus**, simulating cars and sending telemetry data to an IoT Cloud Gateway.
+Rovers are actually vehicle simulators implemented in **Quarkus**, simulating cars and sending telemetry data to an IoT Cloud Gateway.
 
 The data is then being used in different data processing flows for visualization, realtime analytics, machine learning and other use cases.
 
@@ -16,7 +16,7 @@ You can use the **install.sh** script to simply install demo.
 1. Fill in the mandatory properties in **install_cleanup_vars.sh**, i.e.:
 
 
-    NAMESPACE=bobbycar
+    NAMESPACE=rover
 
     APP_DOMAIN=apps.ocp.domain
 
@@ -28,13 +28,13 @@ You can use the **install.sh** script to simply install demo.
 
 3. Run the **cleanup.sh** script to uninstall the demo
 
-If you want to manually install Bobbycar in your own environment, please follow these [installation instructions!](https://github.com/sa-mw-dach/bobbycar/tree/master/helm)
+If you want to manually install Rover in your own environment, please follow these [installation instructions!](https://github.com/Red-Hat-Space-Association/moon-base/tree/master/helm)
 
 ## Purpose
 
 + Accelerate building IoT solutions faster with Red Hat technologies.
   
-+ Bobbycar aims to showcase the COMPLETE Red Hat Middleware stack on OpenShift in a real world IoT context.
++ Rover aims to showcase the COMPLETE Red Hat Middleware stack on OpenShift in a real world IoT context.
 
 + Getting a more realistic hands-on experience with cloud-native development and OpenShift
 

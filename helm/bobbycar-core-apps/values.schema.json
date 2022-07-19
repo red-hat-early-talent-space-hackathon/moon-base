@@ -2,26 +2,26 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://example.com/example.json",
   "type": "object",
-  "title": "bobbycar-core-apps",
-  "description": "This Helm Chart installs the Bobbycar application components",
+  "title": "rover-core-apps",
+  "description": "This Helm Chart installs the Rover application components",
   "default": {},
   "examples": [
     {
-      "namespace": "bobbycar",
-      "appName": "Bobbycar",
+      "namespace": "rover",
+      "appName": "Rover",
       "ocpDomain": "apps.ocp3.stormshift.coe.muc.redhat.com",
       "ocpApi": "api.ocp3.stormshift.coe.muc.redhat.com",
       "mqtt": {
         "topic": {
-          "mqttZoneChangeTopic": "bobbycar/zonechange",
-          "mqttMetricsTopic": "bobbycar/enginemetrics"
+          "mqttZoneChangeTopic": "rover/zonechange",
+          "mqttMetricsTopic": "rover/enginemetrics"
         }
       },
       "kafka": {
         "topic": {
-          "gps": "bobbycar-gps",
-          "metrics": "bobbycar-metrics",
-          "zonechange": "bobbycar-zonechange"
+          "gps": "rover-gps",
+          "metrics": "rover-metrics",
+          "zonechange": "rover-zonechange"
         }
       },
       "datagrid": {
@@ -69,11 +69,11 @@
       "$id": "#/properties/namespace",
       "type": "string",
       "title": "The namespace / project",
-      "description": "The namespace where to install Bobbycar.",
+      "description": "The namespace where to install Rover.",
       "pattern": "^[A-Za-z0-9_-]+$",
       "default": "",
       "examples": [
-        "bobbycar"
+        "rover"
       ]
     },
     "appName": {
@@ -84,7 +84,7 @@
       "default": "",
       "pattern": "^[A-Za-z0-9_-]+$",
       "examples": [
-        "Bobbycar"
+        "Rover"
       ]
     },
     "ocpDomain": {
@@ -118,8 +118,8 @@
       "examples": [
         {
           "topic": {
-            "mqttZoneChangeTopic": "bobbycar/zonechange",
-            "mqttMetricsTopic": "bobbycar/enginemetrics"
+            "mqttZoneChangeTopic": "rover/zonechange",
+            "mqttMetricsTopic": "rover/enginemetrics"
           }
         }
       ],
@@ -135,8 +135,8 @@
           "default": {},
           "examples": [
             {
-              "mqttZoneChangeTopic": "bobbycar/zonechange",
-              "mqttMetricsTopic": "bobbycar/enginemetrics"
+              "mqttZoneChangeTopic": "rover/zonechange",
+              "mqttMetricsTopic": "rover/enginemetrics"
             }
           ],
           "required": [
@@ -151,7 +151,7 @@
               "description": "The MQTT Zonechange topic name.",
               "default": "",
               "examples": [
-                "bobbycar/zonechange"
+                "rover/zonechange"
               ]
             },
             "mqttMetricsTopic": {
@@ -161,7 +161,7 @@
               "description": "The MQTT Metrics topic name.",
               "default": "",
               "examples": [
-                "bobbycar/enginemetrics"
+                "rover/enginemetrics"
               ]
             }
           },
@@ -179,9 +179,9 @@
       "examples": [
         {
           "topic": {
-            "gps": "bobbycar-gps",
-            "metrics": "bobbycar-metrics",
-            "zonechange": "bobbycar-zonechange"
+            "gps": "rover-gps",
+            "metrics": "rover-metrics",
+            "zonechange": "rover-zonechange"
           }
         }
       ],
@@ -197,9 +197,9 @@
           "default": {},
           "examples": [
             {
-              "gps": "bobbycar-gps",
-              "metrics": "bobbycar-metrics",
-              "zonechange": "bobbycar-zonechange"
+              "gps": "rover-gps",
+              "metrics": "rover-metrics",
+              "zonechange": "rover-zonechange"
             }
           ],
           "required": [
@@ -215,7 +215,7 @@
               "description": "The Kafka topic name.",
               "default": "",
               "examples": [
-                "bobbycar-gps"
+                "rover-gps"
               ]
             },
             "metrics": {
@@ -225,7 +225,7 @@
               "description": "The Kafka topic name.",
               "default": "",
               "examples": [
-                "bobbycar-metrics"
+                "rover-metrics"
               ]
             },
             "zonechange": {
@@ -235,7 +235,7 @@
               "description": "The Kafka topic name.",
               "default": "",
               "examples": [
-                "bobbycar-zonechange"
+                "rover-zonechange"
               ]
             }
           },
@@ -346,7 +346,7 @@
               "$id": "#/properties/datagrid/properties/account/properties/password",
               "type": "string",
               "title": "password",
-              "description": "The operator password. Look in secret: bobbycar-dg-generated-secret",
+              "description": "The operator password. Look in secret: rover-dg-generated-secret",
               "default": "",
               "pattern": "^.+$",
               "examples": [
@@ -409,7 +409,7 @@
               "$id": "#/properties/dashboard/properties/config/properties/threeScaleApiKey",
               "type": "string",
               "title": "threeScaleApiKey",
-              "description": "3scale API key for Bobbycar APIs.",
+              "description": "3scale API key for Rover APIs.",
               "default": "",
               "examples": [
                 "replaceme"
@@ -425,7 +425,7 @@
       "$id": "#/properties/carSimulator",
       "type": "object",
       "title": "The carSimulator config",
-      "description": "Configuration of the Bobbycar vehicle simulation pods.",
+      "description": "Configuration of the Rover vehicle simulation pods.",
       "default": {},
       "examples": [
         {
@@ -449,7 +449,7 @@
           "$id": "#/properties/carSimulator/properties/name",
           "type": "string",
           "title": "name",
-          "description": "The deployment name of teh car-simulator / Bobbycar.",
+          "description": "The deployment name of teh car-simulator / Rover.",
           "default": "",
           "examples": [
             "car-simulator"
@@ -469,7 +469,7 @@
           "$id": "#/properties/carSimulator/properties/config",
           "type": "object",
           "title": "config",
-          "description": "Car-simulator / Bobbycar configuration",
+          "description": "Car-simulator / Rover configuration",
           "default": {},
           "examples": [
             {
