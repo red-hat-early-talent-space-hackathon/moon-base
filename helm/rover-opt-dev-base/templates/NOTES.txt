@@ -1,5 +1,0 @@
-Rover Base Development Components:
-
-  - Gogs, Go Git Service
-  - Nexus Artifact repository
-  - SonarQube, static code analysis

@@ -1,5 +1,0 @@
-Rover Tekton Components:
-
-  - Rover (car-simulator) Tekton pipeline
-  - Buildah Task
-  - Tekton Trigger
