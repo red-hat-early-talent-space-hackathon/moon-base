@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: dashboard-streaming
-          image: quay.io/redhat_emp1/etsh-moon-base-dashboard-streaming:v5
+          image: quay.io/redhat_emp1/etsh-moon-base-dashboard-streaming:v4
           ports:
             - containerPort: 8080
               protocol: TCP
