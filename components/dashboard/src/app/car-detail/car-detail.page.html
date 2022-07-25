@@ -19,24 +19,23 @@
       <ion-row>
         <ion-col>
           <ion-list style="border: 1px solid #000; border-radius: 5px;">
-            <ion-item>Rover ID: <span class="metricDisplayGrey"> {{ carMetric.driverId }} </span></ion-item>
-            <ion-item>VIN: <span class="metricDisplayGrey"> {{ carMetric.vin }} </span></ion-item>
-            <ion-item>Manufacturer:
-              <span class="metricDisplayGrey" *ngIf="carBg==='ROVER'"> RHSA </span>
+            <ion-item> <b>Rover ID:</b> <span class="metricDisplayGrey"> {{ carMetric.driverId }} </span></ion-item>
+            <ion-item> <b>Manufacturer:</b>
+              <span class="metricDisplayGrey" *ngIf="carBg==='ROVER'"> NASA </span>
             </ion-item>
-            <ion-item> Model:
-              <span class="metricDisplayGrey" *ngIf="carBg==='ROVER'"> 2022 V01 </span>
+            <ion-item> <b>Model:</b>
+              <span class="metricDisplayGrey" *ngIf="carBg==='ROVER'"> Rover V1 </span>
             </ion-item>
-            <ion-item> RoverZone: <span class="metricDisplayGrey"> {{carMetric.zone}} </span></ion-item>
+            <ion-item> <b>RoverZone:</b> <span class="metricDisplayGrey"> {{carMetric.zone}} </span></ion-item>
           </ion-list>
         </ion-col>
         <ion-col>
           <ion-list style="border: 1px solid #000; border-radius: 5px;">
-          <ion-item> Speed: <span class="metricDisplayGreen"> {{ carMetric.speed | number: '1.2-2' }} </span></ion-item>
-          <ion-item *ngIf="carBg ==='ROVER'"> RPM: <span class="metricDisplayGreen"> {{ carMetric.rpm | number: '1.2-2' }} </span></ion-item>
-          <ion-item *ngIf="carBg ==='ROVER'"> l/100km: <span class="metricDisplayGreen"> {{ carMetric.fuel | number: '1.2-2' }} </span></ion-item>
-          <ion-item *ngIf="carBg ==='ROVER'"> CO2: <span class="metricDisplayGreen"> {{ carMetric.co2 }} </span></ion-item>
-          <ion-item> Gear:
+          <ion-item> <b>Speed:</b> <span class="metricDisplayGreen"> {{ carMetric.speed | number: '1.2-2' }} </span></ion-item>
+          <ion-item *ngIf="carBg ==='ROVER'"> <b>RPM:</b> <span class="metricDisplayGreen"> {{ carMetric.rpm | number: '1.2-2' }} </span></ion-item>
+          <ion-item *ngIf="carBg ==='ROVER'"> <b>l/100km:</b> <span class="metricDisplayGreen"> {{ carMetric.fuel | number: '1.2-2' }} </span></ion-item>
+          <ion-item *ngIf="carBg ==='ROVER'"> <b>CO2:</b> <span class="metricDisplayGreen"> {{ carMetric.co2 }} </span></ion-item>
+          <ion-item> <b>Gear:</b>
             <span class="metricDisplayGreen" *ngIf="carBg ==='ROVER'"> {{ carMetric.gear }} </span>
           </ion-item>
         </ion-list>
