@@ -19,7 +19,7 @@ import com.redhat.rover.carsim.cars.model.SpeedPerRpm;
 
 
 public class JsonEngineConfiguration implements EngineConfiguration {
-	private static final String DEFAULT_ENGINE_CONFIG_JSON = "/engines/bmw_m3_coupe.json";
+	private static final String DEFAULT_ENGINE_CONFIG_JSON = "/engines/rover_v1.json";
 	private static final Logger LOGGER = LoggerFactory.getLogger(JsonEngineConfiguration.class);
 	private Jsonb jsonb;
 	private EngineBehavior engineBehavior;
