@@ -76,9 +76,9 @@ public class CarSimulatorApp {
 	String pathToRoutes;
 	@ConfigProperty(name = "com.redhat.rover.carsim.route.remote", defaultValue = "")
 	Optional<String[]> remoteRoutes;
-	@ConfigProperty(name = "com.redhat.rover.carsim.delay", defaultValue = "100")
+	@ConfigProperty(name = "com.redhat.rover.carsim.delay", defaultValue = "1000")
 	int delay;
-	@ConfigProperty(name = "com.redhat.rover.carsim.factor", defaultValue = "100.0")
+	@ConfigProperty(name = "com.redhat.rover.carsim.factor", defaultValue = "60")
 	double factor;
 	@ConfigProperty(name = "com.redhat.rover.carsim.repeat", defaultValue = "true")
 	boolean repeat;

@@ -209,7 +209,7 @@ export class CarDetailPage implements OnInit {
             if(msg.nextZoneId !== null){
                 this.carMetric.zone = msg.nextZoneId;
             } else {
-                this.carMetric.zone = 'Default Zone';
+                this.carMetric.zone = 'Undefined';
             }
           }
       }, // Called whenever there is a message from the server.

@@ -87,7 +87,7 @@ spec:
             - name: com.redhat.rover.carsim.cars
               value: '3'
             - name: com.redhat.rover.carsim.factor
-              value: '5'
+              value: 60
             - name: com.redhat.rover.carsim.repeat
               value: 'true'
             - name: com.redhat.rover.carsim.kafka.truststore
@@ -95,7 +95,7 @@ spec:
             - name: com.redhat.rover.carsim.kafka.trustStorePassword
               value: 'xVu212U35%?sseTrwsaahh21'
             - name: com.redhat.rover.carsim.delay
-              value: 1000
+              value: 10000
             - name: com.redhat.rover.carsim.kafka.apiKey
               value: ''
             - name: quarkus.log.level
