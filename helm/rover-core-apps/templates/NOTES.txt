@@ -6,5 +6,4 @@ Rover core application components:
 - Cache Service: Camel-K app
 - Kafka2Datagrid Service: Camel-K app
 - MQTT2Kafka Service: Camel-K app
-- RoverZone CRD
-- 3 RoverZone CRs
+- RoverZone CRs

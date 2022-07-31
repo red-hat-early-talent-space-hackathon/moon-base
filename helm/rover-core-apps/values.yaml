@@ -37,10 +37,10 @@ carSimulator:
   name: car-simulator 
   replicas: 1
   config:
-    carsimCars: 20
-    carsimFactor: 3
+    carsimCars: 11
+    carsimFactor: 60
     carsimRepeat: true
-    carsimDelay: 1000
+    carsimDelay: 50000
 imageCredentials:
   name: priv-registry-key
   registry: quay.io

@@ -1,0 +1,12 @@
+apiVersion: rover.redhat.com/v1alpha1
+kind: RoverZone
+metadata:
+  name: moon-checkpoint-a
+spec:
+  name: "Moon Checkpoint A"
+  type: "circle"
+  priority: 5000
+  position:
+    lat: 50.427331
+    lng: 8.274343
+  radius: 2000

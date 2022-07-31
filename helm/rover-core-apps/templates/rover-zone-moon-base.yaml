@@ -1,0 +1,12 @@
+apiVersion: rover.redhat.com/v1alpha1
+kind: RoverZone
+metadata:
+  name: moon-base
+spec:
+  name: "Moon Base"
+  type: "circle"
+  priority: 5000
+  position:
+    lat: 50.698211
+    lng: 8.310018
+  radius: 5000

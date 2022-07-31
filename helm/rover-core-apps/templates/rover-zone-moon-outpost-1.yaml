@@ -1,0 +1,12 @@
+apiVersion: rover.redhat.com/v1alpha1
+kind: RoverZone
+metadata:
+  name: moon-outpost-1
+spec:
+  name: "Moon Outpost 1"
+  type: "circle"
+  priority: 5000
+  position:
+    lat: 50.097138
+    lng: 8.16928
+  radius: 5000
