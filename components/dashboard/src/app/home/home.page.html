@@ -13,13 +13,54 @@
     <ion-card class="welcome-card">
       <img src="./assets/banner.png" alt="" />
       <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Red Hat Rover</ion-card-title>
+        <ion-card-title> <h1>Moon Base Modernization Project</h1> </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>IoT Transportation demo using Red Hat OpenShift and Middleware technologies.</p>
+        <br>
+        <br>
+        <h1 style="font-weight:bold">Situation Description</h1>
+        <br>
+        <p style="font-size:18px">
+          Colonizing the moon is not an easy endeavor. So far, we successfully scaled our team to 20 astronauts that conduct various missions to attain a deeper understanding of the environment and to expand our infrastructure. Our vision is to develop our moon base into a space center from which deep space exploration missions can be launched.
+        </p>
+        <br>
+        <p style="font-size:18px">
+          Seven moon outposts were constructed in a circular pattern, which allows us to send our autonomous rovers on a roundtrip. Further checkpoints were built between outposts, where emergency resources are located.
+        </p>
+        <br>
+        <p style="font-size:18px">
+          Initially, we developed a Moon Rover Tracking System (MRTS), which, as the name suggests, tracks our rovers on the moon. This system provides an interface for the IoT data coming from the rovers and provides a web dashboard for a graphical representation of their location and metrics. It also shows the outposts and checkpoints as zones, as well as indicating if a rover has entered such a zone.
+        </p>
+        <br>
+        <p style="font-size:18px">
+          Our technology department likes to think of the moon not as a far away elestial object, but rather simply as an environment bound by requirements and constraints. Our IT operations can be compared with those of any other large organisation. This is why we solve our challenges by leaveraging open source innovation through Red Hat. We developed the MRTS using a broad range of Red Hat runtime and middleware technologies on top of OpenShift. The development cluster resides on AWS using the OpenShift managed service ROSA, where we use rover emulators to feed data into the MRTS. The production cluster runs in our moon base data center and received real-time rover data.
+        </p>
+        <br>
+        <img src="./assets/hl-arch-layers.png" height="200px" alt="" />
+        <br><br>
+        <p style="font-size:18px">
+          We received positive feedback from our astronauts about the usefulness of the MRTS. Rowever, we also received some constructive criticism, which we would like to improve on. 
+        </p>
+        <br>
+        <br>
+        <br>
+        <h1 style="font-weight:bold">Personas</h1>
+        <br>
+        <p style="font-size:18px">
+          Our <b>Head of Mission Control</b> Neil is placed on the earth. His daily routine mostly consists of planning moon missions and then communicating with the Space Engineers to execute them. He is responsible for the success of the missions, which is why he needs to be aware of all the things that happen on the moon. Due to that it is necessary for him to get the right information at the right time. 
+        </p>
+        <br>
+        <p style="font-size:18px">
+          <b>Space Engineer</b> Olaf has a pretty busy schedule on the moon. On one hand, he needs to fulfill all the missions that he gets from the Head of Mission Control from the earth, reporting on his tasks and often adapting to new orders. On the other hand, he needs to report all of his actions to the Moon Base Manger. He often travels from outpost to outpost to complete different tasks. Unfortunately, he feels like he is wasting time waiting for rovers, which he sometimes misses because he didnt check their location regularly enough.
+        </p>
+        <br>
+        <p style="font-size:18px">
+          <b>Moon Base Manager</b> Tom is responsible for the moon infrastructure and the wellbeing of his Space Engineers. He is really proud about his newly provided MRTS. He spent a lot of time with the design and development of it. There were a lot of space walks in his uncomfortable space suit, but now, with this system in place, he is happy that he can spend a lot more time in his cozy office with a great view of planet earth. Now, he recognized that he still spends too much time monitoring the MRTS, trying to map the reported activities of his engineers to the location of the outposts, checkpoints, and rovers.
+        </p>
+        <br><br><br><br>
       </ion-card-content>
     </ion-card>
+
     
     <!--
     <ion-list lines="none">
