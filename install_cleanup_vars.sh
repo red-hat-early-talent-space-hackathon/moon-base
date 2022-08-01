@@ -1,7 +1,7 @@
-NAMESPACE=
-APP_DOMAIN=
-API_DOMAIN=
-GOOGLE_API_KEY=
+NAMESPACE=rover-tracking-system-team3
+APP_DOMAIN=apps.cluster-8bf7c.8bf7c.sandbox721.opentlc.com
+API_DOMAIN=api.cluster-8bf7c.8bf7c.sandbox721.opentlc.com
+GOOGLE_API_KEY=AIzaSyAqGrXm0BFiOp1_tGjk84FKz0rOpWivPOs
 INSTALL_OPERATORS=true
 HELM_INFRA_RELEASE_NAME=infra
 HELM_APP_RELEASE_NAME=apps
