@@ -28,7 +28,7 @@ spec:
         deploymentconfig: dashboard
     spec:
       containers:
-      - image: quay.io/redhat_emp1/etsh-moon-base-dashboard-frontend:v6
+      - image: quay.io/redhat_emp1/etsh-moon-base-dashboard-frontend:v7
         imagePullPolicy: Always
         name: dashboard
         ports:
